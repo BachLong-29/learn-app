@@ -20,7 +20,10 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #000;
+    /* background-image: url('https://raw.githubusercontent.com/hosseinnabi-ir/Responsive-Glass-Sidebar-using-CSS-and-JavaScript/Main/images/bg.jpg'); */
+    background-size: cover;
+    background: #fff;
+    background-repeat: no-repeat;
   }
 }

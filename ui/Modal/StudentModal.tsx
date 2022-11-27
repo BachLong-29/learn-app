@@ -1,5 +1,5 @@
-import Form from '../../pages/student/create/components/Form';
 import { Modal } from 'antd';
+import Form from '../../pages/student/create/components/Form';
 import { Student } from '../../utils/constants';
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 
 const StudentModal = (props: Props) => {
   const { isModalOpen, data, handleCancel, id } = props;
+  console.log({ data });
   return (
     <>
       <Modal

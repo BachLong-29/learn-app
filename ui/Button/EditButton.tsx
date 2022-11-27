@@ -12,8 +12,8 @@ const EditButton = (props: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getStudent = useMemo(() => {
     return data.find((item) => item.key === id);
-  }, [id]);
-
+  }, [id, JSON.stringify(data)]);
+  console.log({ getStudent });
   const showModal = () => {
     setIsModalOpen(true);
   };

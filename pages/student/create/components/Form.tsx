@@ -8,6 +8,7 @@ import { Student } from '../../../../utils/constants';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
+import { useMemo } from 'react';
 
 interface Props {
   id?: string;
@@ -17,10 +18,10 @@ interface Props {
 
 const FormStudent = (props: Props) => {
   const { id = '', data, isEdit = false } = props;
+  console.log({ data });
   const router = useRouter();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
-  console.log(data?.name);
   const onReset = () => {
     form.resetFields();
   };
@@ -52,8 +53,8 @@ const FormStudent = (props: Props) => {
     console.log('Failed:', errorInfo);
   };
 
-  return (
-    <div>
+  const SForm = useMemo(() => {
+    return (
       <Form
         form={form}
         name="basic"
@@ -97,8 +98,10 @@ const FormStudent = (props: Props) => {
           </Button>
         </Form.Item>
       </Form>
-    </div>
-  );
+    );
+  }, [JSON.stringify(data)]);
+
+  return <div>{SForm}</div>;
 };
 
 export default FormStudent;

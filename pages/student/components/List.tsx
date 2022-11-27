@@ -1,4 +1,4 @@
-import Table from 'antd/es/table/Table';
+import { Table } from 'antd';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';

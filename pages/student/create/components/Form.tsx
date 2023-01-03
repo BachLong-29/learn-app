@@ -2,13 +2,13 @@ import { Button, Form, Input, Radio } from 'antd';
 import {
   addStudentRedux,
   editStudentRedux,
-} from '../../../../actions/student.action';
+} from '../../../../redux/actions/student.action';
 
 import { Student } from '../../../../utils/constants';
 import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
-import { useMemo } from 'react';
 
 interface Props {
   id?: string;

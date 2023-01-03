@@ -1,4 +1,4 @@
-import { Student } from '../utils/constants';
+import { Student } from '../../utils/constants';
 import { cloneDeep } from 'lodash';
 
 const initialState: Student[] = [

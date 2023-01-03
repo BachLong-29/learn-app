@@ -1,4 +1,4 @@
-import { Student } from '../utils/constants';
+import { Student } from '../../utils/constants';
 
 export const addStudentRedux = (payload: Student) => {
   return { type: 'ADD', payload: payload };

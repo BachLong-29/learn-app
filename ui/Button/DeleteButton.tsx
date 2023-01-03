@@ -1,5 +1,5 @@
 import { DeleteOutlined } from '@ant-design/icons';
-import { removeStudentRedux } from '../../actions/student.action';
+import { removeStudentRedux } from '../../redux/actions/student.action';
 import { useDispatch } from 'react-redux';
 
 interface Props {

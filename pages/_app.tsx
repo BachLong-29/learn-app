@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { Box } from '../ui/General/Box';
 import Head from 'next/head';
 import Nav from '../ui/Navigation/Nav';
-import { wrapper } from '../store/store';
+import { wrapper } from '../redux/store/store';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

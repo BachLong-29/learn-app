@@ -6,7 +6,7 @@ import {
 
 import { Student } from '../../../../utils/constants';
 import { useDispatch } from 'react-redux';
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -17,18 +17,19 @@ interface Props {
 }
 
 const FormStudent = (props: Props) => {
-  const { id = '', data, isEdit = false } = props;
+  const { data, isEdit = false } = props;
   const router = useRouter();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
   const onReset = () => {
     form.resetFields();
   };
+
   const onFinish = (values: Student) => {
     if (isEdit) {
       dispatch(
         editStudentRedux({
-          key: id,
+          id: data?.id || '',
           name: values.name,
           age: values.age,
           gender: values.gender,
@@ -37,7 +38,7 @@ const FormStudent = (props: Props) => {
     } else {
       dispatch(
         addStudentRedux({
-          key: uuidv4(),
+          id: uuidv4(),
           name: values.name,
           age: values.age,
           gender: values.gender,
@@ -51,19 +52,22 @@ const FormStudent = (props: Props) => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
-
+  const initValue = useMemo(() => {
+    return {
+      name: data?.name ?? 'kinmg',
+      age: data?.age,
+      gender: data?.gender,
+    };
+  }, [data, JSON.stringify(data)]);
   const SForm = useMemo(() => {
+    console.log({ initValue });
     return (
       <Form
         form={form}
         name="basic"
         labelCol={{ span: 3 }}
         wrapperCol={{ span: 21 }}
-        initialValues={{
-          name: data?.name,
-          age: data?.age,
-          gender: data?.gender,
-        }}
+        initialValues={initValue}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
@@ -98,9 +102,9 @@ const FormStudent = (props: Props) => {
         </Form.Item>
       </Form>
     );
-  }, [JSON.stringify(data)]);
+  }, [data?.id, data, initValue]);
 
   return <div>{SForm}</div>;
 };
 
-export default FormStudent;
+export default memo(FormStudent);

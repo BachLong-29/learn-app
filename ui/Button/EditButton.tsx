@@ -1,7 +1,8 @@
-import EditOutlined from '@ant-design/icons/EditOutlined';
-import StudentModal from '../Modal/StudentModal';
 import { useMemo, useState } from 'react';
+
+import EditOutlined from '@ant-design/icons/EditOutlined';
 import { Student } from '../../utils/constants';
+import StudentModal from '../Modal/StudentModal';
 
 interface Props {
   id: string;
@@ -11,7 +12,7 @@ const EditButton = (props: Props) => {
   const { id, data } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const getStudent = useMemo(() => {
-    return data.find((item) => item.key === id);
+    return data.find((item) => item.id === id);
   }, [id, JSON.stringify(data)]);
   console.log({ getStudent });
   const showModal = () => {

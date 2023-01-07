@@ -4,8 +4,8 @@ import { studentAction } from '../../utils/common/contants';
 export const addStudentRedux = (payload: Student) => {
   return { type: studentAction.ADD_STUDENT, payload: payload };
 };
-export const removeStudentRedux = (key: string) => {
-  return { type: studentAction.REMOVE_STUDENT, payload: { key } };
+export const removeStudentRedux = (id: string) => {
+  return { type: studentAction.REMOVE_STUDENT, payload: { id } };
 };
 
 export const editStudentRedux = (data: Student) => {

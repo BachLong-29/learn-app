@@ -27,15 +27,15 @@ export const renderColumns = (props: columns) => {
       title: '',
       dataIndex: 'edit',
       render: (_: any, record: any) => {
-        return <Button onClick={() => goEditStudent(record.key)}>edit</Button>;
+        return <Button onClick={() => goEditStudent(record.id)}>edit</Button>;
       },
       width: 20,
     },
     // {
     //   title: '',
     //   dataIndex: 'delete',
-    //   render: (_: any, record: { key: React.Key }) => (
-    //     <DeleteButton id={record.key as string} />
+    //   render: (_: any, record: { id: any }) => (
+    //     <DeleteButton id={record.id as string} />
     //   ),
     //   width: 20,
     // },

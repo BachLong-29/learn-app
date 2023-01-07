@@ -30,12 +30,16 @@
   font-weight: 700;
   font-size: 2em;
   text-decoration: none;
+  white-space: nowrap;
 }
 .header.sticky .logo {
   color: #111;
 }
 .header .logo span {
   color: #ff0157;
+}
+.header ul {
+  padding: 0;
 }
 .header .navigation {
   position: relative;
@@ -49,6 +53,7 @@
   text-decoration: none;
   color: #fff;
   font-weight: 400;
+  white-space: nowrap;
 }
 .header.sticky .navigation li a {
   color: #111;

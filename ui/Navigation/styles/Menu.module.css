@@ -48,8 +48,8 @@
 }
 .header .navigation li a {
   text-decoration: none;
-  color: #fff;
   font-weight: 400;
+  white-space: nowrap;
 }
 .header.sticky .navigation li a {
   color: #111;
@@ -81,7 +81,7 @@
   .header .navigation li {
     margin-left: 0;
   }
-  header .navigation li a {
+  .header .navigation li a {
     color: #111;
     font-size: 1.6em;
   }

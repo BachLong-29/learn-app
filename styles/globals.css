@@ -26,12 +26,13 @@ a {
     /* background-image: url('https://raw.githubusercontent.com/hosseinnabi-ir/Responsive-Glass-Sidebar-using-CSS-and-JavaScript/Main/images/bg.jpg'); */
     /* background-size: cover; */
     /* background-repeat: no-repeat; */
-    background: linear-gradient(
+    /* background: linear-gradient(
       23deg,
       rgba(12, 12, 12, 0.98) 0%,
       rgba(37, 37, 37, 0.98) 20%,
       rgba(161, 151, 21, 0.98) 100%
-    );
+    ); */
+    background: #ade0c8;
     min-height: 100vh;
   }
 }

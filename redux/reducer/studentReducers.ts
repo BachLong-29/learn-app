@@ -1,5 +1,6 @@
 import { Student } from '../../utils/constants';
 import { cloneDeep } from 'lodash';
+import { studentAction } from '../../utils/common/contants';
 
 const initialState: Student[] = [
   {
@@ -23,11 +24,11 @@ const initialState: Student[] = [
 ];
 const reducer = (state: any = initialState, action: any) => {
   switch (action.type) {
-    case 'ADD':
+    case studentAction.ADD_STUDENT:
       return state.concat(action.payload);
-    case 'REMOVE':
+    case studentAction.REMOVE_STUDENT:
       return state.filter((item: any) => item.key !== action.payload.key);
-    case 'EDIT':
+    case studentAction.EDIT_STUDENT:
       const cloneData = cloneDeep(state);
       const index = cloneData.findIndex(
         (item: Student) => item.key === action.payload.data.key

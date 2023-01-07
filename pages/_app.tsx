@@ -3,8 +3,8 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Box } from '../ui/General/Box';
 import Head from 'next/head';
-import { wrapper } from '../redux/store/store';
 import MenuBar from '../components/Navigation/MenuBar';
+import { wrapper } from '../redux/store/store';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -15,12 +15,10 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.ico" />
         {/* <link rel="stylesheet" href="/styles/globals.css" /> */}
       </Head>
-      {/* <Box style={{ paddingTop: '100px' }}> */}
       <MenuBar />
       <Box style={{ width: '100%', paddingTop: '100px' }}>
         <Component {...pageProps} />
       </Box>
-      {/* </Box> */}
     </>
   );
 };

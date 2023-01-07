@@ -18,7 +18,6 @@ interface Props {
 
 const FormStudent = (props: Props) => {
   const { id = '', data, isEdit = false } = props;
-  console.log({ data });
   const router = useRouter();
   const dispatch = useDispatch();
   const [form] = Form.useForm();

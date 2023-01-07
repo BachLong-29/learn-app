@@ -1,12 +1,13 @@
 import { Student } from '../../utils/constants';
+import { studentAction } from '../../utils/common/contants';
 
 export const addStudentRedux = (payload: Student) => {
-  return { type: 'ADD', payload: payload };
+  return { type: studentAction.ADD_STUDENT, payload: payload };
 };
 export const removeStudentRedux = (key: string) => {
-  return { type: 'REMOVE', payload: { key } };
+  return { type: studentAction.REMOVE_STUDENT, payload: { key } };
 };
 
 export const editStudentRedux = (data: Student) => {
-  return { type: 'EDIT', payload: { data } };
+  return { type: studentAction.EDIT_STUDENT, payload: { data } };
 };

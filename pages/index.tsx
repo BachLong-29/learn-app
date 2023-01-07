@@ -2,24 +2,22 @@ import { useEffect, useState } from 'react';
 
 import Head from 'next/head';
 import Todo from '../components/TodoPage/Todo';
-import axios from 'axios';
 import studentApi from './api/studentService';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState<any[]>([]);
   useEffect(() => {
     const fetchProductList = async () => {
       try {
         const response = await studentApi.getAll();
-        console.log('Fetch products successfully', { response });
+        setProductList(response?.data);
       } catch (error) {
         console.log('Failed to fetch product list: ', error);
       }
     };
     fetchProductList();
   }, []);
-  console.log({ productList });
   return (
     <div className={styles.container}>
       <Head>

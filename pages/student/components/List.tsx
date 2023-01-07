@@ -1,8 +1,8 @@
 import { Table } from 'antd';
+import { renderColumns } from '../../../utils/renderColumns';
+import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-import { renderColumns } from '../../../utils/renderColumns';
 
 const Container = styled.div`
   padding: 20px;
@@ -27,12 +27,16 @@ const List = () => {
   const router = useRouter();
   const studentRedux = useSelector((state: any) => state.student);
 
-  const columns = renderColumns({
-    data: studentRedux,
-  });
   const goCreateStudent = () => {
     router.push('/student/create');
   };
+  const goEditStudent = (id: string) => {
+    router.push(`student/edit/${id}`);
+  };
+  const columns = renderColumns({
+    data: studentRedux,
+    goEditStudent: goEditStudent
+  });
   const renderHeader = () => {
     return (
       <Flex>

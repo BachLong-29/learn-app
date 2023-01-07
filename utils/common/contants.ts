@@ -1,0 +1,5 @@
+export enum studentAction {
+  ADD_STUDENT = 'ADD_STUDENT',
+  REMOVE_STUDENT = 'REMOVE_STUDENT',
+  EDIT_STUDENT = 'EDIT_STUDENT',
+}

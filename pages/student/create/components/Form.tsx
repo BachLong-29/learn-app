@@ -3,10 +3,11 @@ import {
   addStudentRedux,
   editStudentRedux,
 } from '../../../../redux/actions/student.action';
+import { memo, useMemo } from 'react';
 
 import { Student } from '../../../../utils/constants';
+import studentApi from './../../../api/studentService';
 import { useDispatch } from 'react-redux';
-import { memo, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -27,6 +28,12 @@ const FormStudent = (props: Props) => {
 
   const onFinish = (values: Student) => {
     if (isEdit) {
+      studentApi.updateStudent(data?.id, {
+        id: data?.id || '',
+          name: values.name,
+          age: values.age,
+          gender: values.gender,
+      })
       dispatch(
         editStudentRedux({
           id: data?.id || '',
@@ -36,9 +43,16 @@ const FormStudent = (props: Props) => {
         })
       );
     } else {
+      const id = uuidv4();
+      studentApi.createStudent({
+        id: id,
+        name: values.name,
+        age: values.age,
+        gender: values.gender,
+      })
       dispatch(
         addStudentRedux({
-          id: uuidv4(),
+          id: id,
           name: values.name,
           age: values.age,
           gender: values.gender,

@@ -1,5 +1,5 @@
 import { Student } from '../../utils/constants';
-import { studentAction } from '../../utils/common/contants';
+import { studentAction } from '../../utils/common/constants';
 
 export const addStudentRedux = (payload: Student) => {
   return { type: studentAction.ADD_STUDENT, payload: payload };

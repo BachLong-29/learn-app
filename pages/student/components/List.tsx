@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
 import { renderColumns } from '../../../utils/renderColumns';
-import { studentAction } from '../../../utils/common/contants';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';

@@ -1,8 +1,7 @@
-import { call, take, put } from 'redux-saga/effects';
+import { call, put, take } from 'redux-saga/effects';
 
 import axios from 'axios';
-import { studentAction } from '../../utils/common/contants';
-import studentApi from '../../pages/api/studentService';
+import { studentAction } from '../../utils/common/constants';
 
 // const getData = async () => {
 //   const res = await studentApi.getAll();

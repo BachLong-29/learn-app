@@ -2,21 +2,27 @@
   "student": [
     {
       "id": "1",
-      "name": "John",
-      "age": 32,
+      "name": "John Cena",
+      "age": "44",
       "gender": "male"
     },
     {
       "id": "2",
-      "name": "Jim",
-      "age": 42,
-      "gender": "male"
+      "name": "Jane Hopper",
+      "age": "20",
+      "gender": "female"
     },
     {
       "id": "3",
       "name": "Anne",
-      "age": 32,
+      "age": "67",
       "gender": "female"
+    },
+    {
+      "id": "fc215e4a-16d6-477a-b7f3-f4e28fce25e6",
+      "name": "kai king",
+      "age": "22",
+      "gender": "male"
     }
   ]
 }

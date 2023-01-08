@@ -1,6 +1,6 @@
 import { Student } from '../../utils/constants';
 import { cloneDeep } from 'lodash';
-import { studentAction } from '../../utils/common/contants';
+import { studentAction } from '../../utils/common/constants';
 
 const initialState: Student[] = [];
 const reducer = (state: any = initialState, action: any) => {

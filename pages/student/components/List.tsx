@@ -1,8 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Table } from 'antd';
+import { getAllStudent } from '../../../redux/actions/student.action';
 import { renderColumns } from '../../../utils/renderColumns';
+import { studentAction } from '../../../utils/common/contants';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
 
 const Container = styled.div`
   padding: 20px;
@@ -35,7 +39,7 @@ const List = () => {
   };
   const columns = renderColumns({
     data: studentRedux,
-    goEditStudent: goEditStudent
+    goEditStudent: goEditStudent,
   });
   const renderHeader = () => {
     return (
@@ -45,6 +49,10 @@ const List = () => {
       </Flex>
     );
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllStudent());
+  }, []);
   return (
     <Container>
       {renderHeader()}

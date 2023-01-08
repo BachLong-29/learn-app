@@ -2,28 +2,11 @@ import { Student } from '../../utils/constants';
 import { cloneDeep } from 'lodash';
 import { studentAction } from '../../utils/common/contants';
 
-const initialState: Student[] = [
-  {
-    id: '1',
-    name: 'John',
-    age: 32,
-    gender: 'male',
-  },
-  {
-    id: '2',
-    name: 'Jim',
-    age: 42,
-    gender: 'male',
-  },
-  {
-    id: '3',
-    name: 'Anne',
-    age: 32,
-    gender: 'female',
-  },
-];
+const initialState: Student[] = [];
 const reducer = (state: any = initialState, action: any) => {
   switch (action.type) {
+    case studentAction.POPULATE_STUDENT:
+      return action.payload;
     case studentAction.ADD_STUDENT:
       return state.concat(action.payload);
     case studentAction.REMOVE_STUDENT:

@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { Box } from '../ui/General/Box';
+import { Box } from '../components/General/Box';
 import Head from 'next/head';
 import MenuBar from '../components/Navigation/MenuBar';
 import { wrapper } from '../redux/store/store';

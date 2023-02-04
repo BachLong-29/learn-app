@@ -1,8 +1,9 @@
-import { Student } from '../../utils/constants';
+import { $FixType, Student } from '../../utils/constants';
+
 import { cloneDeep } from 'lodash';
 import { studentAction } from '../../utils/common/constants';
 
-const initialState: Student[] = [];
+const initialState: $FixType[] = [];
 const reducer = (state: any = initialState, action: any) => {
   switch (action.type) {
     case studentAction.POPULATE_STUDENT:

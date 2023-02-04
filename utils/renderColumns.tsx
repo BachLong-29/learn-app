@@ -1,8 +1,11 @@
+import { $FixType, Student } from './constants';
+
 import { Button } from 'antd';
-import { Student } from './constants';
+import Link from 'next/link';
+import User from '../pages/components/User/User';
 
 type columns = {
-  data: Student[];
+  data: $FixType[];
   goEditStudent: (id: string) => void;
 };
 export const renderColumns = (props: columns) => {
@@ -12,6 +15,9 @@ export const renderColumns = (props: columns) => {
       title: 'Name',
       dataIndex: 'name',
       width: 250,
+      render: (_: any, record: any) => {
+        return <Link href={`/student/detail/${record.id}`}>{record.name}</Link>;
+      },
     },
     {
       title: 'Age',

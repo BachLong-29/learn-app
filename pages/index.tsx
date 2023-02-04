@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Head from 'next/head';
-import Todo from '../components/TodoPage/Todo';
+import Todo from 'ui-components/TodoPage/Todo';
 import studentApi from './api/studentService';
 import styles from '../styles/Home.module.css';
 

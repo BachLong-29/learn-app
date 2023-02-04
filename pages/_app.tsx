@@ -17,12 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <MenuBar />
 
-      <Box
-        style={{
-          width: '100%',
-          paddingTop: '87px',
-        }}
-      >
+      <Box paddingTop="87px" w="100%">
         <Component {...pageProps} />
       </Box>
     </>

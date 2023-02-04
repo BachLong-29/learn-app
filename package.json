@@ -21,6 +21,8 @@
     "@types/react-redux": "^7.1.24",
     "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
+    "@xstyled/styled-components": "^3.7.0",
+    "@xstyled/system": "^3.7.0",
     "antd": "^5.0.1",
     "axios": "^1.2.2",
     "babel-plugin-styled-components": "^2.0.7",
@@ -41,6 +43,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@xstyled-theme/config": "^1.4.2",
     "concurrently": "^7.6.0",
     "redux-devtools": "^3.7.0"
   }

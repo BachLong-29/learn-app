@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
+import { Box } from 'ui-components/General/Box';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
 import { renderColumns } from '../../../utils/renderColumns';
@@ -7,9 +8,6 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-const Container = styled.div`
-  padding: 20px;
-`;
 const Button = styled.div`
   background: #ff4e8e;
   color: #fff;
@@ -53,10 +51,10 @@ const List = () => {
     dispatch(getAllStudent());
   }, []);
   return (
-    <Container>
+    <Box p="20px">
       {renderHeader()}
       <Table bordered columns={columns} dataSource={studentRedux} />
-    </Container>
+    </Box>
   );
 };
 

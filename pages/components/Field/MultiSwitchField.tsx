@@ -1,10 +1,11 @@
 import { $FixType } from '../../../utils/constants';
+import MultiSwitch from 'ui-components/MultiSwitch/MultiSwitch';
 import React from 'react';
 import { Select } from 'antd';
 import Wrapper from './Wrapper';
-import { genderOptions } from './../../../utils/constants';
+import { genderOptions } from '../../../utils/constants';
 
-type SelectFieldProps = {
+type MultiSwitchFieldProps = {
   field: $FixType;
   form?: $FixType;
   type?: string;
@@ -13,22 +14,23 @@ type SelectFieldProps = {
   label?: string;
   options?: any[];
 };
-const SelectField = (props: SelectFieldProps) => {
+const MultiSwitchField = (props: MultiSwitchFieldProps) => {
   const { field, form, placeholder, label, options, type } = props;
-  const handleChangeValue = (option: string) => {
-    form.setFieldValue(field?.name || '', option);
+  const handleChangeValue = (option: any) => {
+    form.setFieldValue(field?.name || '', option.value);
   };
   return (
     <Wrapper label={label}>
-      <Select
+      <MultiSwitch
         options={options}
-        placeholder={placeholder}
+        renderOption={(item) => {
+          return <>{item.label}</>;
+        }}
         {...field}
         onChange={handleChangeValue}
-        style={{ width: '100%' }}
       />
     </Wrapper>
   );
 };
 
-export default SelectField;
+export default MultiSwitchField;

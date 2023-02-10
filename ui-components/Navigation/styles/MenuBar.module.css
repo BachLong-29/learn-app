@@ -26,7 +26,7 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 .header .logo {
-  color: #fff;
+  color: #393d52;
   font-weight: 700;
   font-size: 2em;
   text-decoration: none;
@@ -51,7 +51,7 @@
 }
 .header .navigation li a {
   text-decoration: none;
-  color: #fff;
+  color: #393d52;
   font-weight: 400;
   white-space: nowrap;
 }

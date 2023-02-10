@@ -22,10 +22,11 @@ a {
   }
   body {
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: #393d52;
     background-repeat: no-repeat;
     min-height: 100vh;
-    background: rgba(146, 142, 142, 0.959);
+    background: #f1e0de;
+    /* background: rgba(146, 142, 142, 0.959); */
     /* background-image: url('../public/images/default.jpg');
     background-repeat: no-repeat;
     background-size: cover; */

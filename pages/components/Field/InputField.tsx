@@ -14,7 +14,6 @@ type InputFieldProps = {
 
 const InputField = (props: InputFieldProps) => {
   const { field, form, placeholder, label, type } = props;
-  console.log({ field, form });
   return (
     <Wrapper label={label}>
       <Input placeholder={placeholder} type={type} {...field} />

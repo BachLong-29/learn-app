@@ -21,7 +21,7 @@
   transition: 0.5s;
 }
 .header.sticky {
-  background: #fff;
+  background: #393d52;
   padding: 10px 50px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
@@ -33,7 +33,7 @@
   white-space: nowrap;
 }
 .header.sticky .logo {
-  color: #111;
+  color: #f1e0de;
 }
 .header .logo span {
   color: #ff0157;
@@ -56,7 +56,7 @@
   white-space: nowrap;
 }
 .header.sticky .navigation li a {
-  color: #111;
+  color: #f1e0de;
 }
 .header .navigation li a:hover {
   color: #ff0157;
@@ -67,6 +67,12 @@
   .header.sticky {
     padding: 10px 20px;
   }
+  .header .navigation .formenu {
+    display: block;
+  }
+  .header .navigation .left {
+    margin-right: 0;
+  }
   .header .navigation {
     display: none;
   }
@@ -74,7 +80,7 @@
     width: 100%;
     height: calc(100% - 68px);
     position: fixed;
-    top: 68px;
+    top: 52px;
     left: 0;
     display: flex;
     justify-content: center;
@@ -90,23 +96,28 @@
     font-size: 1.6em;
   }
   .menuToggle {
-    position: relative;
+    position: absolute;
+    top: 14px;
+    right: 20px;
     width: 40px;
     height: 40px;
-    /* background: url(menu.png); */
+    background: url(/images/menu.png);
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
   }
   .menuToggle.active {
-    /* background: url(close.png); */
+    background: url(/images/close.png);
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
   }
   header.sticky .menuToggle {
     filter: invert(1);
+  }
+  .dot {
+    display: none;
   }
 }
 .dot {
@@ -126,4 +137,7 @@
 .flex {
   display: flex;
   align-items: center;
+}
+.formenu {
+  display: none;
 }

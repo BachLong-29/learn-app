@@ -1,4 +1,6 @@
+import { Box } from 'ui-components/General/Box';
 import Head from 'next/head';
+import Image from 'next/image';
 import Todo from 'ui-components/TodoPage/Todo';
 
 export default function Class() {

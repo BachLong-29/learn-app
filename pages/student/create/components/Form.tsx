@@ -3,15 +3,16 @@ import { FastField, Form, Formik } from 'formik';
 
 import Banner from 'ui-components/Banner/Banner';
 import { Box } from 'ui-components/General/Box';
+import Image from 'next/image';
 import InputField from 'components/Field/InputField';
 import MultiSwitch from 'ui-components/MultiSwitch/MultiSwitch';
+import MultiSwitchField from './../../../components/Field/MultiSwitchField';
 import SelectField from 'components/Field/SelectField';
 import { memo } from 'react';
 import studentApi from './../../../api/studentService';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { v4 as uuid } from 'uuid';
-import MultiSwitchField from './../../../components/Field/MultiSwitchField';
 
 interface Props {
   id?: string;
@@ -117,9 +118,9 @@ const FormStudent = (props: Props) => {
                 {/* <Box h="100%" w="40%" background="#393d52"></Box> */}
                 <Banner
                   height="100%"
-                  width="40%"
+                  width="30%"
                   styles={{ background: '#393d52' }}
-                  chilren={<Box>Banner</Box>}
+                  // chilren={<Image src="/images/background/backgroundform.png" width={200} height={200} />}
                 />
                 <Grid>
                   {renderFields.map((item) => item.content)}

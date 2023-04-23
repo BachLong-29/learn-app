@@ -3,13 +3,16 @@ import { FastField, Form, Formik } from 'formik';
 
 import Banner from 'ui-components/Banner/Banner';
 import { Box } from 'ui-components/General/Box';
-import Image from 'next/image';
+import { Button } from 'antd';
+import { Flex } from 'ui-components/General/Flex';
 import InputField from 'components/Field/InputField';
-import MultiSwitch from 'ui-components/MultiSwitch/MultiSwitch';
-import MultiSwitchField from './../../../components/Field/MultiSwitchField';
+import MultiSwitchField from '../../components/Field/MultiSwitchField';
+import NegativeButton from 'ui-components/Button/NegativeButton';
+import PositiveButton from 'ui-components/Button/PositiveButton';
 import SelectField from 'components/Field/SelectField';
+import defaultTheme from 'ui-components/theme/theme';
 import { memo } from 'react';
-import studentApi from './../../../api/studentService';
+import studentApi from '../../api/studentService';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { v4 as uuid } from 'uuid';
@@ -115,17 +118,22 @@ const FormStudent = (props: Props) => {
           return (
             <Form>
               <Wrapper>
-                {/* <Box h="100%" w="40%" background="#393d52"></Box> */}
                 <Banner
                   height="100%"
                   width="30%"
-                  styles={{ background: '#393d52' }}
-                  // chilren={<Image src="/images/background/backgroundform.png" width={200} height={200} />}
+                  styles={{ background: defaultTheme.colors.dark_blue }}
                 />
-                <Grid>
-                  {renderFields.map((item) => item.content)}
-                  {/* <button type="submit">Submit</button> */}
-                </Grid>
+                <Flex
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  w="100%"
+                >
+                  <Grid>{renderFields.map((item) => item.content)}</Grid>
+                  <FormFooter>
+                    <NegativeButton>Cancel</NegativeButton>
+                    <PositiveButton>Save</PositiveButton>
+                  </FormFooter>
+                </Flex>
               </Wrapper>
             </Form>
           );
@@ -136,7 +144,6 @@ const FormStudent = (props: Props) => {
 };
 const Grid = styled.div`
   padding: 20px;
-  width: 100%;
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
@@ -144,8 +151,16 @@ const Grid = styled.div`
 `;
 const Wrapper = styled(Box)`
   display: flex;
-  border: 2px #393d52 solid;
+  border: 2px ${defaultTheme.colors.dark_blue} solid;
   border-radius: 5px;
   height: calc(100vh - 127px);
+`;
+const FormFooter = styled(Flex)`
+  background: ${defaultTheme.colors.white};
+  border-end-end-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  gap: 40px;
 `;
 export default memo(FormStudent);

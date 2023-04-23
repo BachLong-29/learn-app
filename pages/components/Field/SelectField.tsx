@@ -3,6 +3,7 @@ import React from 'react';
 import { Select } from 'antd';
 import Wrapper from './Wrapper';
 import { genderOptions } from './../../../utils/constants';
+import styled from 'styled-components';
 
 type SelectFieldProps = {
   field: $FixType;
@@ -20,15 +21,22 @@ const SelectField = (props: SelectFieldProps) => {
   };
   return (
     <Wrapper label={label}>
-      <Select
+      <CustomSelect
+        style={{ width: '100%', borderRadius: '4px' }}
         options={options}
         placeholder={placeholder}
         {...field}
         onChange={handleChangeValue}
-        style={{ width: '100%' }}
+        size="large"
       />
     </Wrapper>
   );
 };
+
+const CustomSelect = styled(Select)`
+  .ant-select-selector {
+    height: 40px;
+  }
+`;
 
 export default SelectField;

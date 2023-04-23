@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Form from '../create/components/Form';
+import Form from '../components/Form';
 import Head from 'next/head';
 import studentApi from '../../api/studentService';
 

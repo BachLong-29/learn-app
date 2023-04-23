@@ -4,13 +4,13 @@ import { Box } from 'ui-components/General/Box';
 import styled from 'styled-components';
 
 type Iprops = {
-    options: any[];
-    renderOption: (option: any) => React.ReactNode;
-    onChange?: (item: any) => void;
-}
+  options: any[];
+  renderOption: (option: any) => React.ReactNode;
+  onChange?: (item: any) => void;
+};
 
 const MultiSwitch = (props: Iprops) => {
-  const {onChange,options, renderOption} = props;
+  const { onChange, options, renderOption } = props;
   const [select, setSelect] = useState(0);
   return (
     <Container>
@@ -36,7 +36,7 @@ const Container = styled(Box)`
   display: flex;
   background: #fff;
   border: 1px solid #d3a5a3;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 4px;
   gap: 8px;
   width: 100%;
@@ -46,7 +46,7 @@ const Item = styled(Box)<{ selected?: boolean }>`
   justify-content: center;
   align-items: center;
   background: ${(props) => (props.selected ? '#d3a5a3' : '#fff')};
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: 600;
   width: 50%;
   height: 30px;
@@ -58,4 +58,3 @@ const Item = styled(Box)<{ selected?: boolean }>`
 `;
 
 export default MultiSwitch;
-

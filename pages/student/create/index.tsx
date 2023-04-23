@@ -1,5 +1,5 @@
 import { Box } from 'ui-components/General/Box';
-import Form from './components/Form';
+import Form from '../components/Form';
 import Head from 'next/head';
 
 export default function User() {

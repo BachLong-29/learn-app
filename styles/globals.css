@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
+*{
+  font-family: 'Poppins', sans-serif;
+}
 html,
 body {
   padding: 0;
   margin: 0;
+  background: #f1e0de;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -23,12 +27,8 @@ a {
   body {
     font-family: 'Poppins', sans-serif;
     color: #393d52;
-    background-repeat: no-repeat;
     min-height: 100vh;
     background: #f1e0de;
-    /* background: rgba(146, 142, 142, 0.959); */
-    /* background-image: url('../public/images/default.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
+    /* ece3e1 */
   }
 }

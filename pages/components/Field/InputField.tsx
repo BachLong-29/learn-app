@@ -16,7 +16,13 @@ const InputField = (props: InputFieldProps) => {
   const { field, form, placeholder, label, type } = props;
   return (
     <Wrapper label={label}>
-      <Input placeholder={placeholder} type={type} {...field} />
+      <Input
+        style={{ borderRadius: '4px' }}
+        size="large"
+        placeholder={placeholder}
+        type={type}
+        {...field}
+      />
     </Wrapper>
   );
 };

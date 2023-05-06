@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <MenuBar />
 
-      <Box paddingTop="87px" w="100%">
+      <Box paddingTop="103px" w="100%">
         <Component {...pageProps} />
       </Box>
     </>

@@ -1,21 +1,23 @@
+import React, { CSSProperties } from 'react';
+
 import { $FixType } from '../../../utils/constants';
 import { Input } from 'antd';
-import React from 'react';
 import Wrapper from './Wrapper';
 
 type InputFieldProps = {
-  field: $FixType;
+  field?: $FixType;
   form?: $FixType;
   type?: string;
   placeholder?: string;
   disable?: boolean;
   label?: string;
+  wrapperStyle?: CSSProperties;
 };
 
 const InputField = (props: InputFieldProps) => {
-  const { field, form, placeholder, label, type } = props;
+  const { field, form, placeholder, label, type, wrapperStyle } = props;
   return (
-    <Wrapper label={label}>
+    <Wrapper label={label} style={wrapperStyle}>
       <Input
         style={{ borderRadius: '4px' }}
         size="large"

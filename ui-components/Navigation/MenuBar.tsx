@@ -7,7 +7,7 @@ const MenuBar = () => {
   const router = useRouter();
   const [scroll, setScroll] = useState(false);
   const [active, setActive] = useState(false);
-  
+
   const goHome = () => {
     router.push('/');
     setActive(false);
@@ -24,7 +24,11 @@ const MenuBar = () => {
     router.push('/exam');
     setActive(false);
   };
-  
+  const goLogin = () => {
+    router.push('login');
+    setActive(false);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', function () {
       if (window.scrollY > 0) {
@@ -76,7 +80,8 @@ const MenuBar = () => {
             </li>
           </ul>
           <a onClick={goHome} className={styles.logo}>
-            학생<span>.</span>
+            {/* 학생<span>.</span> */}
+            <img src="/images/icon.png" width="80px" height="70px" />
           </a>
           <div
             className={`${styles.menuToggle} ${
@@ -94,7 +99,7 @@ const MenuBar = () => {
             <li className={styles.right}>
               <div className={styles.flex}>
                 <div className={`${styles.dot} ${styles.left}`}></div>
-                <a>Sign up</a>
+                <a onClick={goLogin}>Login</a>
               </div>
             </li>
           </ul>

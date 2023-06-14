@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import { Box } from 'ui-components/General/Box';
+import Footer from 'ui-components/Footer/Footer';
 import Head from 'next/head';
 import MenuBar from 'ui-components/Navigation/MenuBar';
 import { wrapper } from '../redux/store/store';
@@ -15,11 +16,17 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/styles/globals.css" />
       </Head>
-      <MenuBar />
 
-      <Box paddingTop="103px" w="100%">
+      <MenuBar />
+      <Box
+        position="relative"
+        paddingTop="103px"
+        w="100%"
+        minHeight="calc(100vh - 283px)"
+      >
         <Component {...pageProps} />
       </Box>
+      <Footer />
     </>
   );
 };

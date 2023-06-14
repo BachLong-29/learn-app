@@ -22,7 +22,7 @@
 }
 .header.sticky {
   background: #393d52;
-  padding: 10px 50px;
+  padding: 0px 35px 10px 35px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 .header .logo {

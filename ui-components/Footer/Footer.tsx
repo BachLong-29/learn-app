@@ -29,6 +29,7 @@ const Footer = () => {
         position: 'relative',
         bottom: 0,
         height: '180px',
+        marginTop: '12px'
       }}
     >
       <Container>

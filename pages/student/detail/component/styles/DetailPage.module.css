@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 .detail {
   /* height: calc(100vh - 88px); */
   position: relative;
@@ -61,7 +59,7 @@
   padding-right: 50px;
   justify-content: end;
   display: flex;
-  width: 50%;
+  width: 10%;
 }
 .tab img {
   border: 8px solid #cbcdd15b;

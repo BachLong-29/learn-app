@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         position="relative"
         paddingTop="103px"
         w="100%"
-        minHeight="calc(100vh - 295px)"
+        h="calc(100vh - 103px)"
       >
         <Component {...pageProps} />
       </Box>

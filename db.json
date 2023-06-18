@@ -45,7 +45,8 @@
       "age": 21,
       "gender": "male",
       "nickname": "decline arsenal ",
-      "rank": "S"
+      "rank": "S",
+      "images": ["https://cdn.leonardo.ai/users/ac66a632-504c-41ea-b756-c7ccd8400f7a/generations/6f466adc-b166-4929-bcfc-a99f3043af7a/variations/Default_a_photo_of_8k_ultra_realistic_beautiful_sad_girl_stand_0_6f466adc-b166-4929-bcfc-a99f3043af7a_1.jpg"]
     },
     {
       "name": "Harry kane",
@@ -70,7 +71,8 @@
       "age": 12,
       "gender": "female",
       "nickname": "fernandez",
-      "rank": "S+"
+      "rank": "S+",
+      "images": ["https://cdn.leonardo.ai/users/6a23ff10-fde3-4e3b-a3b8-a7d091117360/generations/11f90734-23ca-4d3f-88a5-0a6902bd0714/variations/Default_full_body_shot_of_spiderman_in_white_and_gold_armour_style_su_3_11f90734-23ca-4d3f-88a5-0a6902bd0714_1.jpg"]
     },
     {
       "id": "d8bcf45b-9142-45e2-8765-eb85673c5239",
@@ -78,7 +80,8 @@
       "age": 5,
       "gender": "other",
       "nickname": "Chau Ong Nam",
-      "rank": "S+"
+      "rank": "S+",
+      "images": ["https://scontent.fsgn8-3.fna.fbcdn.net/v/t39.30808-6/286539786_5722732494404014_1494356711547799954_n.png?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=nVOtODVtdwcAX_5C_aJ&_nc_ht=scontent.fsgn8-3.fna&oh=00_AfB5UlG7jMJZlvCeOlm0LefaTWCPUoLQ93WotK_DT2hwww&oe=6494DFB3"]
     },
     {
       "id": "a1049bf8-976e-4dae-b043-e9364dc18f58",

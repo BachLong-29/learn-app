@@ -61,7 +61,8 @@
       "gender": "female",
       "nickname": "ll",
       "rank": "SSS",
-      "id": "a454aa1e-91d7-431d-b20a-22530228ad65"
+      "id": "a454aa1e-91d7-431d-b20a-22530228ad65",
+      "images": ["https://cdn.leonardo.ai/users/3ea5bfbf-5e02-451a-9ab1-ea621a92e020/generations/796c3886-ffaf-4032-a4b7-aadee09d5f1c/variations/Default_Martina_Joanna_painting_depicting_modern_urban_princes_1_796c3886-ffaf-4032-a4b7-aadee09d5f1c_1.jpg"]
     },
     {
       "id": "d622060e-0ed2-4301-b92f-d19091daafd8",
@@ -93,6 +94,14 @@
       "age": 25,
       "gender": "other",
       "rank": "SSS"
+    },
+    {
+      "id": "a121d0d2-eb52-4b6c-ab85-e2aea95eaecd",
+      "name": "James Hall",
+      "age": 11,
+      "gender": "female",
+      "nickname": "11",
+      "rank": "S+"
     }
   ]
 }

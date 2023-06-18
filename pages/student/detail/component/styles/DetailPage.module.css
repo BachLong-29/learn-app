@@ -6,6 +6,7 @@
   position: relative;
   display: flex;
   z-index: 7;
+  justify-content: space-between;
 }
 
 .info {
@@ -115,7 +116,7 @@
   font-size: 25px;
 }
 /* -webkit-linear-gradient(#0bac89, #57531a); */
-
+/* 
 .ball {
   clip-path: circle(600px at right 800px);
   background: #bbaa82;
@@ -125,4 +126,4 @@
   z-index: -1;
   top: 0;
   left: 0;
-}
+} */

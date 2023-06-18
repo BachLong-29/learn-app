@@ -8,7 +8,7 @@ const DetailPage = (props: any) => {
   return (
     <>
       <div className={styles.detail}>
-        <div className={styles.ball}></div>
+        {/* <div className={styles.ball}></div> */}
         <div className={styles.info}>
           <div className={styles.rank}>
             {data?.rank || ''}
@@ -30,8 +30,10 @@ const DetailPage = (props: any) => {
             playing for their reserve team), with whom he spent two seasons.
           </p>
         </div>
-        <div className={styles.tab}>
-          {/* <Image height={285} width={500} src={data.images[0]} alt="add" /> */}
+        <img height="1232px" width="700px" src={data?.images?.[0]} />
+
+        {/* <div className={styles.tab}>
+    
           <img height={285} width={500} src={data?.images?.[0]} />
           <ul>
             <li className={`${styles.tabs} ${styles.selected}`}>
@@ -41,7 +43,7 @@ const DetailPage = (props: any) => {
             <li className={styles.tabs}>Status</li>
             <li className={styles.tabs}>Skills</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </>
   );

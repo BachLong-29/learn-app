@@ -1,3 +1,4 @@
+import { Box } from 'ui-components/General/Box';
 import Image from 'next/image';
 import React from 'react';
 import styles from './styles/DetailPage.module.css';
@@ -30,7 +31,17 @@ const DetailPage = (props: any) => {
             playing for their reserve team), with whom he spent two seasons.
           </p>
         </div>
-        <img height="1232px" width="700px" src={data?.images?.[0]} />
+        <Box
+          style={{
+            width: '30%',
+            height: '100%',
+            position: 'fixed',
+            top: 0,
+            right: 0,
+          }}
+        >
+          <img height="100%" width="100%" src={data?.images?.[0]} />
+        </Box>
 
         {/* <div className={styles.tab}>
     

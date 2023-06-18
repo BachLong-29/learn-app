@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="/styles/globals.css" />
       </Head>
 
-      {/* <MenuBar /> */}
+      <MenuBar />
       <Box
         position="relative"
         paddingTop="103px"

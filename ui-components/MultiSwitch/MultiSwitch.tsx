@@ -7,11 +7,12 @@ type Iprops = {
   options: any[];
   renderOption: (option: any) => React.ReactNode;
   onChange?: (item: any) => void;
+  value: string;
 };
 
 const MultiSwitch = (props: Iprops) => {
-  const { onChange, options, renderOption } = props;
-  const [select, setSelect] = useState(0);
+  const { onChange, options, renderOption, value } = props;
+  const [select, setSelect] = useState(value);
   return (
     <Container>
       {options?.map((item, index) => {
@@ -19,10 +20,10 @@ const MultiSwitch = (props: Iprops) => {
           <Item
             key={index}
             onClick={() => {
-              setSelect(index);
+              setSelect(item.value);
               onChange && onChange(item);
             }}
-            selected={select === index}
+            selected={select === item.value}
           >
             {renderOption(item)}
           </Item>

@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       >
         <Component {...pageProps} />
       </Box>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -53,7 +53,12 @@ const List = () => {
   return (
     <Box p="20px">
       {renderHeader()}
-      <Table bordered columns={columns} dataSource={studentRedux} />
+      <Table
+        bordered
+        columns={columns}
+        dataSource={studentRedux}
+        pagination={{ pageSize: 20 }}
+      />
     </Box>
   );
 };

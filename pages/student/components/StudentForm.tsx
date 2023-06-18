@@ -3,30 +3,27 @@ import { FastField, Form, Formik } from 'formik';
 
 import Banner from 'ui-components/Banner/Banner';
 import { Box } from 'ui-components/General/Box';
-import { Button } from 'antd';
 import { Flex } from 'ui-components/General/Flex';
 import InputField from 'components/Field/InputField';
 import MultiSwitchField from '../../components/Field/MultiSwitchField';
-import NegativeButton from 'ui-components/Button/NegativeButton';
-import PositiveButton from 'ui-components/Button/PositiveButton';
 import SelectField from 'components/Field/SelectField';
 import defaultTheme from 'ui-components/theme/theme';
 import { memo } from 'react';
-import studentApi from '../../api/studentService';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { v4 as uuid } from 'uuid';
 
 interface Props {
   id?: string;
   data?: $FixType;
   isEdit?: boolean;
+  renderAction: (value: any) => any;
 }
 
-const FormStudent = (props: Props) => {
-  const { data, isEdit = false } = props;
-  const router = useRouter();
-
+const StudentForm = (props: Props) => {
+  const { data, renderAction } = props;
+  console.log({ renderAction });
+  // split mapping function to other file
   const initialValues = {
     name: data?.name,
     age: data?.age,
@@ -34,18 +31,7 @@ const FormStudent = (props: Props) => {
     nickname: data?.nickname,
     rank: data?.rank,
   };
-  const handleSubmit = (data: $FixType) => {
-    const id = uuid();
-    studentApi.createStudent({
-      id: id,
-      name: data.name,
-      age: data.age,
-      gender: data.gender,
-      nickname: data.nickname,
-      rank: data.rank,
-    });
-    router.push('/student');
-  };
+
   const renderFields = [
     {
       key: 'name',
@@ -109,12 +95,8 @@ const FormStudent = (props: Props) => {
   ];
   return (
     <Box p="0 50px" mt="20px">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={(data) => handleSubmit(data)}
-      >
-        {(formikProps) => {
-          const { values, errors, touched } = formikProps;
+      <Formik initialValues={initialValues} onSubmit={() => {}}>
+        {(form) => {
           return (
             <Form>
               <Wrapper>
@@ -129,10 +111,7 @@ const FormStudent = (props: Props) => {
                   w="100%"
                 >
                   <Grid>{renderFields.map((item) => item.content)}</Grid>
-                  <FormFooter>
-                    <NegativeButton>Cancel</NegativeButton>
-                    <PositiveButton>Save</PositiveButton>
-                  </FormFooter>
+                  {renderAction && renderAction(form)}
                 </Flex>
               </Wrapper>
             </Form>
@@ -155,12 +134,5 @@ const Wrapper = styled(Box)`
   border-radius: 5px;
   height: calc(100vh - 127px);
 `;
-const FormFooter = styled(Flex)`
-  background: ${defaultTheme.colors.white};
-  border-end-end-radius: 4px;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  gap: 40px;
-`;
-export default memo(FormStudent);
+
+export default memo(StudentForm);

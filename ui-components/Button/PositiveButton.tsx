@@ -7,9 +7,9 @@ type Iprops = {
   style?: CSSProperties;
 };
 
-const PositiveButton = (props: Iprops) => {
+const PositiveButton = (props: any) => {
   return (
-    <CustomButton genre="positive" style={props.style}>
+    <CustomButton genre="positive" style={props.style} {...props}>
       {props.children}
     </CustomButton>
   );

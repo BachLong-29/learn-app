@@ -14,11 +14,15 @@ const reducer = (state: any = initialState, action: any) => {
       return state.filter((item: any) => item.id !== action.payload.id);
     case studentAction.EDIT_STUDENT:
       const cloneData = cloneDeep(state);
-      const index = cloneData.findIndex(
-        (item: Student) => item.id === action.payload.data.id
-      );
-      cloneData[index] = { ...action.payload.data };
-      return cloneData;
+      return cloneData.map((item: any) => {
+        if(item.id === action.payload.data.studentId) {
+          return {
+            id: item.id,
+            ...action.payload.data.data
+          }
+        }
+        return item;
+      });
     default:
       return state;
   }

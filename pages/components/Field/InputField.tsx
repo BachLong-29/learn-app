@@ -19,6 +19,7 @@ const InputField = (props: InputFieldProps) => {
   return (
     <Wrapper label={label} style={wrapperStyle}>
       <Input
+        autoComplete="off"
         style={{ borderRadius: '4px' }}
         size="large"
         placeholder={placeholder}

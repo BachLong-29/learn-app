@@ -1,24 +1,6 @@
 {
   "student": [
     {
-      "id": "1",
-      "name": "John Cena",
-      "age": "44",
-      "gender": "male"
-    },
-    {
-      "id": "2",
-      "name": "Jane Hopper",
-      "age": "20",
-      "gender": "female"
-    },
-    {
-      "id": "3",
-      "name": "Anne",
-      "age": "67",
-      "gender": "female"
-    },
-    {
       "id": "4",
       "name": "Linh Truong Bui",
       "nickname": "buitruonglinh",
@@ -66,20 +48,20 @@
       "rank": "S"
     },
     {
-      "id": "fd444ae0-6cfc-4392-9b28-8e23fa55a16a",
-      "name": "harry",
-      "age": 12,
-      "gender": "female",
-      "nickname": "kane",
-      "rank": "SS"
+      "name": "Harry kane",
+      "age": 29,
+      "gender": "male",
+      "nickname": "0 co cup",
+      "rank": "SS",
+      "id": "fd444ae0-6cfc-4392-9b28-8e23fa55a16a"
     },
     {
-      "id": "a454aa1e-91d7-431d-b20a-22530228ad65",
-      "name": "emma watson",
+      "name": "Emma Watson",
       "age": 23,
       "gender": "female",
       "nickname": "ll",
-      "rank": "SSS"
+      "rank": "SSS",
+      "id": "a454aa1e-91d7-431d-b20a-22530228ad65"
     },
     {
       "id": "d622060e-0ed2-4301-b92f-d19091daafd8",
@@ -88,6 +70,29 @@
       "gender": "female",
       "nickname": "fernandez",
       "rank": "S+"
+    },
+    {
+      "id": "d8bcf45b-9142-45e2-8765-eb85673c5239",
+      "name": "Tho 7 mau",
+      "age": 5,
+      "gender": "other",
+      "nickname": "Chau Ong Nam",
+      "rank": "S+"
+    },
+    {
+      "id": "a1049bf8-976e-4dae-b043-e9364dc18f58",
+      "name": "Ong Nam",
+      "age": 55,
+      "gender": "male",
+      "nickname": "Ong Noi Thang Tho",
+      "rank": "S+"
+    },
+    {
+      "id": "1c1bd94c-cbfa-4f93-b97b-c9d72cf7e78f",
+      "name": "Pikachu",
+      "age": 25,
+      "gender": "other",
+      "rank": "SSS"
     }
   ]
 }

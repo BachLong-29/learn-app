@@ -32,3 +32,10 @@ a {
     /* ece3e1 */
   }
 }
+
+.successModal .ant-modal-content {
+  padding: 0;
+}
+/* .successModal .ant-modal-confirm-body {
+  height: 300px;
+} */

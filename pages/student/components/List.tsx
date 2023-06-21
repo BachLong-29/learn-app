@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from 'ui-components/General/Box';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
-import { renderColumns } from '../../../utils/renderColumns';
+import { renderColumns } from '../utils/renderColumns';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -26,8 +26,8 @@ const Flex = styled.div`
 
 const List = () => {
   const router = useRouter();
-  const studentRedux = useSelector((state: any) => state.student);
-
+  const studentList = useSelector((state: any) => state.student);
+  
   const goCreateStudent = () => {
     router.push('/student/create');
   };
@@ -35,8 +35,8 @@ const List = () => {
     router.push(`student/edit/${id}`);
   };
   const columns = renderColumns({
-    data: studentRedux,
     goEditStudent: goEditStudent,
+    router
   });
   const renderHeader = () => {
     return (
@@ -56,7 +56,7 @@ const List = () => {
       <Table
         bordered
         columns={columns}
-        dataSource={studentRedux}
+        dataSource={studentList}
         pagination={{ pageSize: 20 }}
       />
     </Box>

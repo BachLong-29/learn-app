@@ -1,52 +1,15 @@
 {
   "student": [
     {
-      "id": "4",
-      "name": "Linh Truong Bui",
-      "nickname": "buitruonglinh",
-      "age": "21",
-      "gender": "female",
-      "rank": "S+",
-      "desc": "abv",
-      "level": "II",
-      "date_of_birth": "24-12-2001",
-      "images": [
-        "https://ss-images.saostar.vn/pc/1663750724899/saostar-9odo3ywk52ff6pre.png"
-      ],
-      "weight": "70",
-      "height": "175",
-      "skill": [
-        {
-          "id": "s-001",
-          "skill": "Sing",
-          "proficiency": 90
-        }
-      ],
-      "otherImages": [],
-      "achievements": [
-        {
-          "images": [
-            "https://i.ytimg.com/vi/OuNo8Tkb3lI/maxresdefault.jpg"
-          ],
-          "title": "Duong toi cho em ve",
-          "year": "2019 - 2020"
-        }
-      ]
-    },
-    {
-      "id": "fc215e4a-16d6-477a-b7f3-f4e28fce25e6",
-      "name": "kai king",
-      "age": "22",
-      "gender": "male"
-    },
-    {
-      "id": "3fb58f52-cf2f-4a05-a42e-89db3205e1ed",
-      "name": "mudryk",
+      "name": "Mykhaylo Mudryk",
       "age": 21,
       "gender": "male",
-      "nickname": "decline arsenal ",
+      "nickname": "Decline Arsenal",
       "rank": "S",
-      "images": ["https://cdn.leonardo.ai/users/ac66a632-504c-41ea-b756-c7ccd8400f7a/generations/6f466adc-b166-4929-bcfc-a99f3043af7a/variations/Default_a_photo_of_8k_ultra_realistic_beautiful_sad_girl_stand_0_6f466adc-b166-4929-bcfc-a99f3043af7a_1.jpg"]
+      "id": "3fb58f52-cf2f-4a05-a42e-89db3205e1ed",
+      "images": [
+        "https://cdn.leonardo.ai/users/a9307b0a-d6a8-4ec9-bfa2-ba7d38bf96da/generations/d87c5342-d6da-4ba0-bcfb-ee56a1ac4f8b/Leonardo_Creative_Charcoal_drawing_illustration_collage_marker_1.jpg"
+      ]
     },
     {
       "name": "Harry kane",
@@ -63,7 +26,9 @@
       "nickname": "ll",
       "rank": "SSS",
       "id": "a454aa1e-91d7-431d-b20a-22530228ad65",
-      "images": ["https://cdn.leonardo.ai/users/3ea5bfbf-5e02-451a-9ab1-ea621a92e020/generations/796c3886-ffaf-4032-a4b7-aadee09d5f1c/variations/Default_Martina_Joanna_painting_depicting_modern_urban_princes_1_796c3886-ffaf-4032-a4b7-aadee09d5f1c_1.jpg"]
+      "images": [
+        "https://cdn.leonardo.ai/users/3ea5bfbf-5e02-451a-9ab1-ea621a92e020/generations/796c3886-ffaf-4032-a4b7-aadee09d5f1c/variations/Default_Martina_Joanna_painting_depicting_modern_urban_princes_1_796c3886-ffaf-4032-a4b7-aadee09d5f1c_1.jpg"
+      ]
     },
     {
       "id": "d622060e-0ed2-4301-b92f-d19091daafd8",
@@ -72,7 +37,9 @@
       "gender": "female",
       "nickname": "fernandez",
       "rank": "S+",
-      "images": ["https://cdn.leonardo.ai/users/6a23ff10-fde3-4e3b-a3b8-a7d091117360/generations/11f90734-23ca-4d3f-88a5-0a6902bd0714/variations/Default_full_body_shot_of_spiderman_in_white_and_gold_armour_style_su_3_11f90734-23ca-4d3f-88a5-0a6902bd0714_1.jpg"]
+      "images": [
+        "https://cdn.leonardo.ai/users/6a23ff10-fde3-4e3b-a3b8-a7d091117360/generations/11f90734-23ca-4d3f-88a5-0a6902bd0714/variations/Default_full_body_shot_of_spiderman_in_white_and_gold_armour_style_su_3_11f90734-23ca-4d3f-88a5-0a6902bd0714_1.jpg"
+      ]
     },
     {
       "id": "d8bcf45b-9142-45e2-8765-eb85673c5239",
@@ -81,7 +48,9 @@
       "gender": "other",
       "nickname": "Chau Ong Nam",
       "rank": "S+",
-      "images": ["https://scontent.fsgn8-3.fna.fbcdn.net/v/t39.30808-6/286539786_5722732494404014_1494356711547799954_n.png?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=nVOtODVtdwcAX_5C_aJ&_nc_ht=scontent.fsgn8-3.fna&oh=00_AfB5UlG7jMJZlvCeOlm0LefaTWCPUoLQ93WotK_DT2hwww&oe=6494DFB3"]
+      "images": [
+        "https://cdn.leonardo.ai/users/d3fe2be7-69ba-4650-8264-57882d3f76ae/generations/03ff9351-d190-4f10-b7cc-3e0601dc67ff/variations/Default_A_detailed_illustration_face_ninja_bunny_fire_tshirt_d_1_03ff9351-d190-4f10-b7cc-3e0601dc67ff_1.jpg"
+      ]
     },
     {
       "id": "a1049bf8-976e-4dae-b043-e9364dc18f58",
@@ -92,11 +61,12 @@
       "rank": "S+"
     },
     {
-      "id": "1c1bd94c-cbfa-4f93-b97b-c9d72cf7e78f",
       "name": "Pikachu",
       "age": 25,
       "gender": "other",
-      "rank": "SSS"
+      "nickname": "God Chu",
+      "rank": "SSS",
+      "id": "1c1bd94c-cbfa-4f93-b97b-c9d72cf7e78f"
     },
     {
       "id": "a121d0d2-eb52-4b6c-ab85-e2aea95eaecd",

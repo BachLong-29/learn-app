@@ -16,7 +16,6 @@ const DetailPage = (props: any) => {
   const handleChangeTab = (tab: string) => {
     setTab(tab);
   };
-  console.log(data.images);
 
   return (
     <Flex w="100%" h="100%" alignItems="end">

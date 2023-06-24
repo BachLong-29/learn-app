@@ -29,7 +29,7 @@ export default function User() {
       gender: data.gender,
       nickname: data.nickname,
       rank: data.rank,
-      images: data.images
+      images: data.images,
     };
     studentApi
       .createStudent(createData)
@@ -87,6 +87,7 @@ export default function User() {
                 }}
                 onClick={() => {
                   router.push('/student');
+                  Modal.destroyAll();
                 }}
               >
                 Go List

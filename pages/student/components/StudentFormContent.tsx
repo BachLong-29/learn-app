@@ -89,7 +89,6 @@ const StudentFormContent = (props: any) => {
       ),
     },
   ];
-  console.log(form.values);
   const banner = useMemo(() => {
     return (
       <Banner

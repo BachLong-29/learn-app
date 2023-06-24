@@ -13,9 +13,6 @@ const UploadImages = (props: any) => {
   const [previewImage, setPreviewImage] = useState('');
   const [previewTitle, setPreviewTitle] = useState('');
 
-  console.log({ value });
-  console.log({ fileList });
-
   const handleCancel = () => setPreviewOpen(false);
 
   const handlePreview = async (file: UploadFile & { originImg: string }) => {

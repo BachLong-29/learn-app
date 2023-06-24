@@ -1,17 +1,23 @@
+import { useEffect, useState } from 'react';
+
 import About from './About';
 import { Box } from 'ui-components/General/Box';
 import { Flex } from 'ui-components/General/Flex';
 import InformationTab from './InformationTab';
+import { RcFile } from 'antd/es/upload';
 import Skills from './Skills';
+import { getBase64 } from 'ui-components/Upload/readImage';
 import styled from 'styled-components';
-import { useState } from 'react';
 
 const DetailPage = (props: any) => {
   const { data } = props;
   const [tab, setTab] = useState('intro');
+
   const handleChangeTab = (tab: string) => {
     setTab(tab);
   };
+  console.log(data.images);
+
   return (
     <Flex w="100%" h="100%" alignItems="end">
       <Flex
@@ -69,7 +75,12 @@ const DetailPage = (props: any) => {
           right: 0,
         }}
       >
-        <img height="100%" width="100%" src={data?.images?.[0]} />
+        <Box
+          as="img"
+          height="100%"
+          width="100%"
+          src={data?.images?.[0].originImg}
+        />
       </Box>
     </Flex>
   );

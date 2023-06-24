@@ -20,6 +20,7 @@ type EditProps = {
 };
 const EditPage = (props: EditProps) => {
   const { data, id } = props;
+  console.log({ data });
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -30,8 +31,8 @@ const EditPage = (props: EditProps) => {
       gender: data.gender,
       nickname: data.nickname,
       rank: data.rank,
+      images: data.images,
     };
-    console.log({ id });
     studentApi
       .updateStudent(id, mappingData)
       .then(() => {
@@ -48,8 +49,7 @@ const EditPage = (props: EditProps) => {
             <>
               <SVGIcon
                 src="/images/svg/success-icon.svg"
-                w={60}
-                h={60}
+                size={60}
                 s={{
                   position: 'absolute',
                   top: '-32px',

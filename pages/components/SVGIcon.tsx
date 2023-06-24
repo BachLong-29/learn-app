@@ -1,17 +1,16 @@
 import React, { CSSProperties } from 'react';
+import { Box } from 'ui-components/General/Box';
 
 const SVGIcon = ({
   src,
-  w,
-  h,
+  size,
   s,
 }: {
   src: string;
-  w: number;
-  h: number;
+  size: number;
   s: CSSProperties;
 }) => {
-  return <img src={src} width={w} height={h} style={s} />;
+  return <Box as="img" src={src} width={size} height={size} style={s} />;
 };
 
 export default SVGIcon;

@@ -29,8 +29,8 @@ export default function User() {
       gender: data.gender,
       nickname: data.nickname,
       rank: data.rank,
+      images: data.images
     };
-
     studentApi
       .createStudent(createData)
       .then(() => {
@@ -42,8 +42,7 @@ export default function User() {
             <>
               <SVGIcon
                 src="/images/svg/success-icon.svg"
-                w={60}
-                h={60}
+                size={60}
                 s={{
                   position: 'absolute',
                   top: '-32px',

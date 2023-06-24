@@ -1,45 +1,70 @@
-import { Button, Dropdown, MenuProps, Space } from 'antd';
+import { ActionMenu, IMenuItem } from 'components/Action/MenuAction.';
 
+import { ActionType } from './action';
 import { Box } from 'ui-components/General/Box';
-import EllipsisOutlined from '@ant-design/icons/EllipsisOutlined';
-import { NextRouter } from 'next/router';
-import React from 'react';
-import { action } from './action';
-import { useDeleteStudent } from 'pages/student/core/usecase/deleteStudent';
+import ConfirmModal from 'components/Modal/ConfirmModal';
+import { map } from 'lodash';
+import { useState } from 'react';
 import withAction from './withAction';
 
-const MenuAction = ({
-  id,
-  data,
-  router,
-}: {
-  id: any;
-  data: any;
-  router: NextRouter;
-}) => {
-  const { exec: execDeleteStudent } = useDeleteStudent();
-  const items = action(router, id, execDeleteStudent);
-  const dropdownItem = items.map((item) => {
-    return {
-      ...item,
-      label: <Box onClick={item.handleAction}>{item.label}</Box>,
-    };
+const mapActionByStatustoMenuItemData = (actions): IMenuItem[] =>
+  map(actions, (action) => {
+    return { ...action, name: action.content };
   });
+
+const MenuAction = withAction(({ studentId, data, actionBtns, actions }) => {
+  const [actionType, setActionType] = useState<any>(null);
+  const [isDeleteModal, setIsDeleteModal] = useState(false);
+
+  const onClick = ({ key }) => {
+    const { type, onOk } = actions[key];
+    setActionType(actions[key]);
+    if (type) {
+      switch (type) {
+        case ActionType.DELETE:
+          setIsDeleteModal(true);
+        default:
+          return null;
+      }
+    }
+    onOk({});
+  };
+
   return (
     <>
-      <Dropdown
-        trigger={['click']}
-        menu={{
-          items: dropdownItem,
+      <Box
+        onClick={(e) => {
+          e.stopPropagation();
         }}
+      >
+        <ConfirmModal
+          visible={isDeleteModal}
+          onCancel={() => setIsDeleteModal(false)}
+          onOk={(req) => {
+            actionType?.onOk(req);
+          }}
+        />
+        <ActionMenu
+          data={mapActionByStatustoMenuItemData(actionBtns)}
+          useTranslate
+          onItemSelect={onClick}
+        />
+      </Box>
+      {/* <Dropdown
+        trigger={['click']}
+        menu={
+          {
+            // items: dropdownItem,
+          }
+        }
         arrow
       >
         <Button>
           <EllipsisOutlined />
         </Button>
-      </Dropdown>
+      </Dropdown> */}
     </>
   );
-};
+});
 
-export default withAction(MenuAction);
+export default MenuAction;

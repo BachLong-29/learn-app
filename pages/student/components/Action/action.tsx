@@ -1,44 +1,58 @@
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
 import EditOutlined from '@ant-design/icons/EditOutlined';
-import { NextRouter } from 'next/router';
-import studentApi from 'pages/api/studentService';
+import { isEmpty } from 'lodash';
 
-export const action = (
-  router: NextRouter,
-  id: string,
-  execDeleteStudent: (id: string) => void
-): {
-  key: string;
+export enum ActionType {
+  EDIT = 'edit',
+  DELETE = 'delete',
+}
+
+type ActionProps = {
+  key: ActionType;
   label: string;
-  actionType?: string;
+  type?: string;
   handleAction?: any;
   icon?: any;
-}[] => {
-  const handleExcuteAction = (type: string) => {
+};
+
+export const buildAction = ({ studentId, router, execDeleteStudent }) => {
+  const handleExcuteAction = (type: ActionType) => {
     switch (type) {
-      case 'delete':
-        execDeleteStudent(id);
+      case ActionType.DELETE:
+        execDeleteStudent(studentId);
         break;
-      case 'edit':
-        router.push(`student/edit/${id}`);
+      case ActionType.EDIT:
+        router.push(`student/edit/${studentId}`);
       default:
         break;
     }
   };
-  return [
-    {
-      key: 'delete',
-      label: 'Delete',
-      actionType: 'delete',
-      handleAction: () => handleExcuteAction('delete'),
+  return {
+    [ActionType.EDIT]: {
+      key: ActionType.EDIT,
+      content: 'Edit',
+      value: ActionType.EDIT,
+      onOk: (req) => handleExcuteAction(ActionType.EDIT),
       icon: <EditOutlined />,
     },
-    {
-      key: 'edit',
-      label: 'Edit',
-      actionType: 'edit',
-      handleAction: () => handleExcuteAction('edit'),
+    [ActionType.DELETE]: {
+      key: ActionType.DELETE,
+      content: 'Delete',
+      type: ActionType.DELETE,
+      value: ActionType.DELETE,
+      onOk: (req) => handleExcuteAction(ActionType.DELETE),
       icon: <DeleteOutlined />,
     },
-  ];
+  };
+};
+
+export const buildActionItems = ({ studentActions }) => {
+  const actions: any[] = [];
+  if (isEmpty(studentActions)) {
+    return [];
+  }
+  actions.push(studentActions[ActionType.EDIT]);
+  actions.push(studentActions[ActionType.DELETE]);
+
+  return actions;
 };

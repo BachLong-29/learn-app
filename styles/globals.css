@@ -19,10 +19,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  /* box-sizing: border-box; */
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -39,6 +35,7 @@ a {
 .successModal .ant-modal-content {
   padding: 0;
 }
-/* .successModal .ant-modal-confirm-body {
-  height: 300px;
-} */
+
+.errorModal .ant-modal-content {
+  padding: 0;
+}

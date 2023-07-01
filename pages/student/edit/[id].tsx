@@ -1,13 +1,11 @@
-import { Button, Modal } from 'antd';
-
 import { Flex } from 'ui-components/General/Flex';
 import NegativeButton from 'ui-components/Button/NegativeButton';
 import PositiveButton from 'ui-components/Button/PositiveButton';
-import RightOutlined from '@ant-design/icons/RightOutlined';
-import SVGIcon from 'components/SVGIcon';
 import StudentForm from '../components/StudentForm';
+import SuccessModal from 'ui-components/Modal/SuccessModal';
 import defaultTheme from 'ui-components/theme/theme';
 import { editStudentRedux } from 'redux/actions/student.action';
+import errorModal from 'ui-components/Modal/ErrorModal';
 import studentApi from '../../api/studentService';
 import styled from 'styled-components';
 import { useCallback } from 'react';
@@ -41,74 +39,17 @@ const EditPage = (props: EditProps) => {
             data: mappingData,
           })
         );
-        Modal.success({
-          style: { padding: 0 },
-          className: 'successModal',
-          title: (
-            <>
-              <SVGIcon
-                src="/images/svg/success-icon.svg"
-                size={60}
-                s={{
-                  position: 'absolute',
-                  top: '-32px',
-                  left: 'calc(50% - 30px)',
-                }}
-              />
-            </>
-          ),
-          maskStyle: { padding: 0 },
-          content: (
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              h={200}
-              w={270}
-              fontSize="32px"
-              color={defaultTheme.colors.dark_blue}
-            >
-              Success!
-            </Flex>
-          ),
-          width: 270,
-          centered: true,
-          maskClosable: true,
-          footer: (
-            <Flex
-              background="#8ddaaa"
-              h={100}
-              style={{
-                borderBottomLeftRadius: '8px',
-                borderBottomRightRadius: '8px',
-              }}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Button
-                style={{
-                  padding: '10px',
-                  width: '150px',
-                  height: '50px',
-                  borderRadius: '40px',
-                }}
-                onClick={() => {
-                  router.push('/student');
-                  Modal.destroyAll();
-                }}
-              >
-                Go List
-                <RightOutlined style={{ fontSize: '12px' }} />
-              </Button>
-            </Flex>
-          ),
-          icon: null,
+        SuccessModal({
+          onOk: () => {
+            router.push('/student');
+          },
         });
       })
       .catch((error) => {
-        console.log({ error });
-        Modal.error({
-          title: 'Error',
-          content: 'error',
+        errorModal({
+          onOk: () => {
+            router.push('/student');
+          },
         });
       });
   };

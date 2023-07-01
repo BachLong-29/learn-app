@@ -34,17 +34,18 @@ export const renderColumns = (props: columns) => {
       title: 'Nick name',
       dataIndex: StudentKeyValue.NICK_NAME,
     },
-    // {
-    //   title: '',
-    //   dataIndex: 'edit',
-    //   render: (_: any, record: any) => {
-    //     return (
-    //       // onClick={() => goEditStudent(record.id)}
-    //       <MenuAction id={record.id} data={record} router={router} />
-    //     );
-    //   },
-    //   width: 20,
-    // },
+    {
+      title: '',
+      dataIndex: 'edit',
+      render: (_: any, record: any) => {
+        return (
+          // onClick={() => goEditStudent(record.id)}
+          // <MenuAction id={record.id} data={record} router={router} />
+          <></>
+        );
+      },
+      width: 20,
+    },
     // {
     //   title: '',
     //   dataIndex: 'delete',

@@ -52,7 +52,7 @@ const List = () => {
         bordered
         columns={columns}
         dataSource={studentList}
-        pagination={{ pageSize: 20 }}
+        pagination={{ pageSize: 18 }}
       />
     </Box>
   );

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Box } from 'ui-components/General/Box';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
@@ -51,7 +52,7 @@ const List = () => {
         bordered
         columns={columns}
         dataSource={studentList}
-        pagination={{ pageSize: 20 }}
+        pagination={{ pageSize: 18 }}
       />
     </Box>
   );

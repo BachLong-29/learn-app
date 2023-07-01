@@ -61,7 +61,7 @@ const UploadImages = (props: any) => {
           return false;
         }}
       >
-        {fileList.length >= 8 ? null : uploadButton}
+        {fileList.length >= 1 ? null : uploadButton}
       </Upload>
       <Modal
         open={previewOpen}

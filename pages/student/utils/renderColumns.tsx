@@ -41,7 +41,8 @@ export const renderColumns = (props: columns) => {
       render: (_: any, record: any) => {
         return (
           // onClick={() => goEditStudent(record.id)}
-          <MenuAction id={record.id} data={record} router={router} />
+          // <MenuAction id={record.id} data={record} router={router} />
+          <></>
         );
       },
       width: 20,

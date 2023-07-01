@@ -27,16 +27,8 @@ const SignInPage = () => {
     <Flex justifyContent="center" alignItems="center" h="84vh">
       <Container>
         <Flex h="100%">
-          <Banner>
-            <Box
-              borderRadius="64px"
-              as="img"
-              src="/images/aaa.jpg"
-              width="100%"
-              height="100%"
-            />
-          </Banner>
-          <LoginForm>
+          {img}
+          <LoginForm isSignUp={isSignUp}>
             <Box fontSize="32px">Login</Box>
             <Box w="100%">
               <InputField
@@ -64,9 +56,11 @@ const SignInPage = () => {
             <Flex justifyContent="start">
               {`Don't have an account?`}
               <Box
-                textDecoration="underline"
-                fontWeight={600}
                 color={defaultTheme.colors.dark_blue}
+                textDecoration="underline"
+                onClick={() => setIsSignUp(!isSignUp)}
+                fontWeight={600}
+                cursor="pointer"
                 ml="4px"
                 as="a"
               >

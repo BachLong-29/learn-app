@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
 import { Box } from 'ui-components/General/Box';
+import CreateButton from 'ui-components/Button/CreateButton';
 import { Flex } from 'ui-components/General/Flex';
 import LiveView from './LiveView';
 import { Table } from 'antd';
@@ -9,6 +10,7 @@ import { getAllStudent } from '../../../redux/actions/student.action';
 import getStudentCols from '../utils/getStudentCols';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import withPage from 'components/withPage';
 
 const Button = styled.div`
   background: #ff4e8e;
@@ -24,7 +26,7 @@ const Title = styled.div`
 const List = () => {
   const router = useRouter();
   const studentList = useSelector((state: any) => state.student);
-  const [viewType, setViewType] = useState('live');
+  const [viewType, setViewType] = useState('nor');
 
   const goCreateStudent = () => {
     router.push('/student/create');
@@ -59,24 +61,25 @@ const List = () => {
   }, []);
 
   return (
-    <Box p="20px" h="70vh">
-      {renderHeader()}
+    <Box p="20px" h="80vh">
+      {/* {renderHeader()} */}
       {viewType === 'nor' && (
         <Table
           bordered
           columns={columns}
           dataSource={studentList}
-          pagination={{ pageSize: 18 }}
+          pagination={{ pageSize: 22 }}
         />
       )}
-      <Flex alignItems="center" justifyContent="center" h="80%">
+      <CreateButton onClick={goCreateStudent} />
+      {/* <Flex alignItems="center" justifyContent="center" h="80%">
         {viewType === 'live' && <LiveView dataSource={studentList} />}
       </Flex>
       <Box textAlign="center" fontSize="60px">
         Student Board
-      </Box>
+      </Box> */}
     </Box>
   );
 };
 
-export default List;
+export default withPage(List);

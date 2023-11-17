@@ -49,25 +49,21 @@ const MenuBar = () => {
         <div
           className={`${styles.header}  ${scroll ? styles.sticky : undefined}`}
         >
-          <a onClick={goHome} className={styles.logo}>
-            {/* 학생<span>.</span> */}
-            <img src="/images/icon.png" width="80px" height="70px" />
-          </a>
           <ul
             className={`${styles.navigation} ${
               active ? styles.active : undefined
             }`}
           >
-            <li className={styles.right}>
+            <li className={styles.left}>
               <div className={styles.flex}>
-                <div className={`${styles.dot} ${styles.left}`}></div>
                 <a onClick={goStudentBoard}>Student</a>
+                <div className={`${styles.dot} ${styles.right}`}></div>
               </div>
             </li>
-            <li className={styles.right}>
+            <li className={styles.left}>
               <div className={styles.flex}>
-                <div className={`${styles.dot} ${styles.left}`}></div>
                 <a onClick={goClassBoard}>Class</a>
+                <div className={`${styles.dot} ${styles.right}`}></div>
               </div>
             </li>
             <li className={`${styles.left} ${styles.formenu}`}>
@@ -83,7 +79,10 @@ const MenuBar = () => {
               </div>
             </li>
           </ul>
-
+          <a onClick={goHome} className={styles.logo}>
+            학생<span>.</span>
+            {/* <img src="/images/icon.png" width="80px" height="70px" /> */}
+          </a>
           <div
             className={`${styles.menuToggle} ${
               active ? styles.active : undefined

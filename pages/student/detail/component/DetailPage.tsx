@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react';
-
 import About from './About';
 import { Box } from 'ui-components/General/Box';
 import { Flex } from 'ui-components/General/Flex';
 import InformationTab from './InformationTab';
-import { RcFile } from 'antd/es/upload';
 import Skills from './Skills';
-import { getBase64 } from 'ui-components/Upload/readImage';
 import styled from 'styled-components';
+import { useState } from 'react';
+import withPage from 'components/withPage';
 
 const DetailPage = (props: any) => {
   const { data } = props;
@@ -20,14 +18,12 @@ const DetailPage = (props: any) => {
   return (
     <Flex w="100%" h="100%" alignItems="end">
       <Flex
-        p="0 100px 100px 100px"
+        p="0 70px 100px 100px"
         flexDirection="column"
         justifyContent="space-between"
-        boxSizing="border-box"
-        style={{
-          width: '70%',
-          height: '90%',
-        }}
+        zIndex={1}
+        w="70%"
+        h="70%"
       >
         {tab === 'intro' && (
           <Tab>
@@ -65,22 +61,25 @@ const DetailPage = (props: any) => {
           </ListItem>
         </Box>
       </Flex>
-      <Box
-        style={{
-          width: '30%',
-          height: '100%',
-          position: 'fixed',
-          top: 0,
-          right: 0,
-        }}
+
+      <Flex
+        alignItems="center"
+        justifyContent="end"
+        paddingRight="50px"
+        w="30%"
+        h="90%"
       >
+        <Ball />
         <Box
           as="img"
-          height="100%"
-          width="100%"
+          h="90%"
+          w="100%"
+          zIndex={1}
+          boxSizing="border-box"
+          border=" 8px solid #cbcdd15b"
           src={data?.images?.[0].originImg}
         />
-      </Box>
+      </Flex>
     </Flex>
   );
 };
@@ -99,6 +98,25 @@ const ListItem = styled(Box)<{ selected?: boolean }>`
   font-size: ${(props) => (props.selected ? '20px' : '14px')};
   font-weight: 600;
   transition: 0.2s;
+`;
+const Ball = styled(Box)`
+  // clip-path: ellipse(44% 67% at 91% 100%);
+  clip-path: polygon(
+    74% 31%,
+    91% 31%,
+    100% 38%,
+    100% 100%,
+    31% 100%,
+    47% 62%,
+    61% 44%
+  );
+  background: #bbaa82;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
 `;
 
 export default DetailPage;

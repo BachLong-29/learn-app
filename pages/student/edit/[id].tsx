@@ -7,6 +7,7 @@ import PositiveButton from 'ui-components/Button/PositiveButton';
 import RightOutlined from '@ant-design/icons/RightOutlined';
 import SVGIcon from 'components/SVGIcon';
 import StudentForm from '../components/StudentForm';
+import SuccessModal from 'components/Modal/SuccessModal';
 import defaultTheme from 'ui-components/theme/theme';
 import { editStudentRedux } from 'redux/actions/student.action';
 import studentApi from '../../api/studentService';
@@ -93,6 +94,7 @@ const EditPage = (props: EditProps) => {
                 }}
                 onClick={() => {
                   router.push('/student');
+                  Modal.destroyAll();
                 }}
               >
                 Go List

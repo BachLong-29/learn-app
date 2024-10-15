@@ -2,8 +2,8 @@ import React, { CSSProperties } from 'react';
 
 import { $FixType } from '../../../utils/constants';
 import { Input } from 'antd';
-import Wrapper from './Wrapper';
 import UploadImages from 'ui-components/Upload/UploadImages';
+import Wrapper from './Wrapper';
 
 type UploadFieldProps = {
   field?: $FixType;
@@ -17,7 +17,6 @@ type UploadFieldProps = {
 
 const UploadField = (props: UploadFieldProps) => {
   const { field, form, placeholder, label, type, wrapperStyle } = props;
-  console.log({ field });
   const handleChangeValue = (option: any) => {
     form.setFieldValue(field?.name || '', option);
   };

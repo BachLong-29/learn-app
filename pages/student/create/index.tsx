@@ -87,6 +87,7 @@ export default function User() {
                 }}
                 onClick={() => {
                   router.push('/student');
+                  Modal.destroyAll();
                 }}
               >
                 Go List

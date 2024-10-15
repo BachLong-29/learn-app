@@ -24,7 +24,6 @@ type Iprops = {
 
 const Banner = (props: Iprops) => {
   const { width, height, image, styles } = props;
-  console.log({ image });
   return (
     <Container w={width} h={height} {...styles}>
       {image ? (

@@ -7,6 +7,7 @@ import getStudentCols from 'core/student/utils/getStudentCols';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import withPage from 'components/withPage';
 
 const Button = styled.div`
   background: #ff4e8e;
@@ -58,4 +59,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default withPage(List);

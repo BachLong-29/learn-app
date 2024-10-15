@@ -1,6 +1,7 @@
 import DetailPage from './component/DetailPage';
 import Head from 'next/head';
 import studentApi from '../../api/studentService';
+import withPage from 'components/withPage';
 
 type EditProps = {
   data: any;
@@ -23,4 +24,4 @@ DetailStudent.getInitialProps = async (ctx: any) => {
   const res = await studentApi.getStudentById(studentId);
   return { data: res.data, id: studentId };
 };
-export default DetailStudent;
+export default withPage(DetailStudent);

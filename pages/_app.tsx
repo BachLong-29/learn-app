@@ -2,7 +2,6 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import { Box } from 'ui-components/General/Box';
-import Footer from 'ui-components/Footer/Footer';
 import Head from 'next/head';
 import MenuBar from 'ui-components/Navigation/MenuBar';
 import { wrapper } from '../redux/store/store';
@@ -17,14 +16,21 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="/styles/globals.css" />
       </Head>
 
-      <MenuBar />
       <Box
-        position="relative"
-        paddingTop="103px"
-        w="100%"
-        h="calc(100vh - 103px)"
+        style={{
+          background: 'rgba(241, 224,222, 0.959)',
+          minHeight: '100vh',
+        }}
       >
-        <Component {...pageProps} />
+        <MenuBar />
+        <Box
+          position="relative"
+          paddingTop="103px"
+          w="100%"
+          h="calc(100vh - 103px)"
+        >
+          <Component {...pageProps} />
+        </Box>
       </Box>
       {/* <Footer /> */}
     </>

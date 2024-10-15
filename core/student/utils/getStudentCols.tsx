@@ -39,14 +39,6 @@ const getStudentCols = (props: columns) => {
       },
       width: 20,
     },
-    // {
-    //   title: '',
-    //   dataIndex: 'delete',
-    //   render: (_: any, record: { id: any }) => (
-    //     <DeleteButton id={record.id as string} />
-    //   ),
-    //   width: 20,
-    // },
   ];
 };
 

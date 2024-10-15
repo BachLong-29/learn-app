@@ -25,7 +25,7 @@ const MenuBar = () => {
     setActive(false);
   };
   const goLogin = () => {
-    router.push('login');
+    router.push('/login');
     setActive(false);
   };
 

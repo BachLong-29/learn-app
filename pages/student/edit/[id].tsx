@@ -1,5 +1,4 @@
 import { Button, Modal } from 'antd';
-import { useCallback, useMemo } from 'react';
 
 import { Flex } from 'ui-components/General/Flex';
 import NegativeButton from 'ui-components/Button/NegativeButton';
@@ -7,11 +6,11 @@ import PositiveButton from 'ui-components/Button/PositiveButton';
 import RightOutlined from '@ant-design/icons/RightOutlined';
 import SVGIcon from 'components/SVGIcon';
 import StudentForm from '../components/StudentForm';
-import SuccessModal from 'components/Modal/SuccessModal';
 import defaultTheme from 'ui-components/theme/theme';
 import { editStudentRedux } from 'redux/actions/student.action';
 import studentApi from '../../api/studentService';
 import styled from 'styled-components';
+import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 

@@ -9,17 +9,14 @@ import styled from 'styled-components';
 
 const SignInPage = () => {
   return (
-    <>
-      {/* <img
-        src="/images/svg/High School-cuate.svg"
-        width="300px"
-        height="300px"
-      /> */}
+    <Flex justifyContent="center" alignItems="center" h="84vh">
       <Container>
         <Flex h="100%">
           <Banner>
-            <img
-              src="/images/svg/High School-cuate.svg"
+            <Box
+              borderRadius="64px"
+              as="img"
+              src="/images/aaa.jpg"
               width="100%"
               height="100%"
             />
@@ -49,17 +46,31 @@ const SignInPage = () => {
                 Sign in
               </PositiveButton>
             </Box>
+            <Flex justifyContent="start">
+              {`Don't have an account?`}
+              <Box
+                textDecoration="underline"
+                fontWeight={600}
+                color={defaultTheme.colors.dark_blue}
+                ml="4px"
+                as="a"
+              >
+                Sign up
+              </Box>
+            </Flex>
           </LoginForm>
         </Flex>
       </Container>
-    </>
+    </Flex>
   );
 };
 
 const Container = styled(Box)`
-  height: 90vh;
-  width: 100%;
-  padding: 10px;
+  background: #fff;
+  height: 800px;
+  width: 50%;
+  border-radius: 64px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 const Banner = styled(Box)`

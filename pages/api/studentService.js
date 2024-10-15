@@ -17,6 +17,10 @@ class StudentAPI {
     const url = '/student';
     return axiosClient.post(url, data)
   }
+  deleteStudent = (studentId) => {
+    const url = `/student/${studentId}`;
+    return axiosClient.delete(url)
+  }
 }
 const studentApi = new StudentAPI();
 export default studentApi;

@@ -30,8 +30,8 @@ const EditPage = (props: EditProps) => {
       gender: data.gender,
       nickname: data.nickname,
       rank: data.rank,
+      images: data.images,
     };
-    console.log({ id });
     studentApi
       .updateStudent(id, mappingData)
       .then(() => {
@@ -48,8 +48,7 @@ const EditPage = (props: EditProps) => {
             <>
               <SVGIcon
                 src="/images/svg/success-icon.svg"
-                w={60}
-                h={60}
+                size={60}
                 s={{
                   position: 'absolute',
                   top: '-32px',
@@ -124,7 +123,7 @@ const EditPage = (props: EditProps) => {
           >
             Cancel
           </NegativeButton>
-          <PositiveButton onClick={() => handleSubmit(form.values)}>
+          <PositiveButton onClick={() => handleSubmit(form?.values)}>
             Save
           </PositiveButton>
         </FormFooter>

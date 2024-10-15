@@ -2,14 +2,8 @@ import Link from 'next/link';
 import { NextRouter } from 'next/router';
 import { StudentKeyValue } from 'utils/StudentKeyValues';
 
-// import MenuAction from '../components/Action/MenuAction';
-
-type columns = {
-  goEditStudent: (id: string) => void;
-  router: NextRouter;
-};
+type columns = {};
 const getStudentCols = (props: columns) => {
-  const { router } = props;
   return [
     {
       title: 'Full name',
@@ -40,11 +34,8 @@ const getStudentCols = (props: columns) => {
       title: '',
       dataIndex: 'edit',
       render: (_: any, record: any) => {
-        return (
-          <></>
-          // onClick={() => goEditStudent(record.id)}
-          // <MenuAction id={record.id} data={record} router={router} />
-        );
+        return <></>;
+        // <MenuAction studentId={record.id} data={record} />;
       },
       width: 20,
     },

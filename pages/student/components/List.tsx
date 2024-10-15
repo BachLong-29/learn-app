@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from 'ui-components/General/Box';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
-import { renderColumns } from 'core/student/utils/renderColumns';
+import getStudentCols from 'core/student/utils/getStudentCols';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -31,13 +31,8 @@ const List = () => {
   const goCreateStudent = () => {
     router.push('/student/create');
   };
-  const goEditStudent = (id: string) => {
-    router.push(`student/edit/${id}`);
-  };
-  const columns = renderColumns({
-    goEditStudent: goEditStudent,
-    router,
-  });
+
+  const columns = getStudentCols({});
   const renderHeader = () => {
     return (
       <Flex>

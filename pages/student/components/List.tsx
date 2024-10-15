@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Box } from 'ui-components/General/Box';
+import CreateButton from 'ui-components/Button/CreateButton';
 import { Table } from 'antd';
 import { getAllStudent } from '../../../redux/actions/student.action';
 import getStudentCols from 'core/student/utils/getStudentCols';
@@ -38,7 +39,6 @@ const List = () => {
     return (
       <Flex>
         <Title>Student Board</Title>
-        <Button onClick={goCreateStudent}>Create</Button>
       </Flex>
     );
   };
@@ -55,6 +55,7 @@ const List = () => {
         dataSource={studentList}
         pagination={{ pageSize: 18 }}
       />
+      <CreateButton onClick={goCreateStudent} />
     </Box>
   );
 };

@@ -5,7 +5,8 @@ const defaultTheme = {
         pink_0: '#f1e0de',
         success: '#8ddaaa',
         error: '#f56064',
-        blue_purple: '#677eff'
+        blue_purple: '#677eff',
+        black: "#000"
     }
 }
 

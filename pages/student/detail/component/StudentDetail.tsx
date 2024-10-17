@@ -2,6 +2,7 @@ import { Box } from 'ui-components/General/Box';
 import { Flex } from 'ui-components/General/Flex';
 import Image from 'next/image';
 import InvertedBorderCard from 'components/Card/InvertedBorderCard';
+import InvertedCard from 'components/Card/InvertedCard';
 import React from 'react';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
@@ -18,7 +19,7 @@ const StudentDetail = (props: iStudentDetail) => {
         <InvertedBorderCard
           imageString={data?.images?.[0].originImg}
           width="70%"
-          height="calc(65vh + 40px)"
+          height="calc(65vh + 44px)"
           hasIcon
         />
         <DateBox>
@@ -29,7 +30,7 @@ const StudentDetail = (props: iStudentDetail) => {
               fontSize: '28px',
               height: 'calc(100% - 20px)',
               padding: '10px',
-              borderRadius: '30px',
+              borderRadius: '25px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -40,7 +41,7 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
           <Box
             style={{
-              color: defaultTheme.colors.white,
+              color: defaultTheme.colors.pink_0,
               fontSize: '16px',
               marginBottom: '10px',
               marginLeft: '10px',
@@ -60,7 +61,7 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
           <Box
             style={{
-              color: defaultTheme.colors.white,
+              color: defaultTheme.colors.pink_0,
               fontSize: '16px',
               marginBottom: '10px',
               marginLeft: '10px',
@@ -98,7 +99,8 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
         </DescriptionContainer>
       </Flex>
-      <OtherContainer>Other</OtherContainer>
+      <InvertedCard width="auto" height="15vh" />
+      {/* <OtherContainer>Other</OtherContainer> */}
     </Box>
   );
 };
@@ -118,7 +120,7 @@ const RankText = styled(Box)`
   font-family: 'Grechen Fuemen', cursive;
   -webkit-text-fill-color: transparent;
   text-transform: capitalize;
-  background: #000;
+  background: ${defaultTheme.colors.black};
   padding-top: 18px;
   padding-left: 12px;
   font-size: 30px;
@@ -153,25 +155,27 @@ const DateBox = styled(Box)`
   height: 80px;
   border-radius: 30px;
   backdrop-filter: blur(10px);
-  border: 3px solid #fff;
+  border: 3px solid ${defaultTheme.colors.pink_0};
   display: flex;
   align-items: end;
 `;
 
 const DescriptionContainer = styled(Box)`
-  background: #fff;
+  background: ${defaultTheme.colors.pink_0};
   width: 30%;
   height: 65vh;
   margin: 15px;
   padding: 20px;
   border-radius: 30px;
+  border: 2px solid ${defaultTheme.colors.dark_blue};
 `;
 const OtherContainer = styled(Box)`
-  background: #fff;
+  background: ${defaultTheme.colors.pink_0};
   height: 15vh;
   margin: 15px;
   padding: 20px;
   border-radius: 30px;
+  border: 2px solid ${defaultTheme.colors.dark_blue};
 `;
 
 export default StudentDetail;

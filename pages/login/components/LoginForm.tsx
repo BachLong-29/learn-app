@@ -1,13 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { Box } from 'ui-components/General/Box';
-import { FastField } from 'formik';
 import { Flex } from 'ui-components/General/Flex';
-import InputField from 'components/Field/InputField';
-import PositiveButton from 'ui-components/Button/PositiveButton';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
 
 type FormTypes = 'sign-in' | 'sign-up';

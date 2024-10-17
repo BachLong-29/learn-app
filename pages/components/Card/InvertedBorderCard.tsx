@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
+
 import { Box } from 'ui-components/General/Box';
 import LeftCircleOutlined from '@ant-design/icons/LeftCircleOutlined';
-import React from 'react';
 import ScheduleOutlined from '@ant-design/icons/ScheduleOutlined';
 import TableOutlined from '@ant-design/icons/TableOutlined';
 import { Tooltip } from 'antd';
@@ -25,15 +26,17 @@ enum IconKey {
 const InvertedBorderCard = (props: iInvertedBorderCard) => {
   const { hasIcon, imageString, height, width } = props;
   const router = useRouter();
-
+  const [selected, setSelected] = useState(IconKey.PROFILE);
   const icons = [
     {
       key: IconKey.BACK,
+      position: 18,
       content: (
         <LeftCircleOutlined
           style={{
             fontSize: 25,
             cursor: 'pointer',
+            color: defaultTheme.colors.pink_0,
           }}
         />
       ),
@@ -43,20 +46,8 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
       },
     },
     {
-      key: IconKey.SCHEDULE,
-      content: (
-        <ScheduleOutlined
-          style={{
-            fontSize: 27,
-            cursor: 'pointer',
-          }}
-        />
-      ),
-      tooltip: 'See the Schedule',
-      callback: () => {},
-    },
-    {
       key: IconKey.PROFILE,
+      position: 73,
       content: (
         <UserOutlined
           style={{
@@ -66,10 +57,30 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
         />
       ),
       tooltip: 'See the Profile',
-      callback: () => {},
+      callback: () => {
+        setSelected(IconKey.PROFILE);
+      },
     },
     {
+      key: IconKey.SCHEDULE,
+      position: 131,
+      content: (
+        <ScheduleOutlined
+          style={{
+            fontSize: 27,
+            cursor: 'pointer',
+          }}
+        />
+      ),
+      tooltip: 'See the Schedule',
+      callback: () => {
+        setSelected(IconKey.SCHEDULE);
+      },
+    },
+
+    {
       key: IconKey.TRANSCRIPT,
+      position: 190,
       content: (
         <TableOutlined
           style={{
@@ -79,7 +90,9 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
         />
       ),
       tooltip: 'See the Transcript',
-      callback: () => {},
+      callback: () => {
+        setSelected(IconKey.TRANSCRIPT);
+      },
     },
   ];
   return (
@@ -91,9 +104,22 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
             <IconBox>
               {icons.map((icon) => (
                 <Tooltip key={icon.key} title={icon.tooltip}>
-                  <Box onClick={icon.callback}>{icon.content}</Box>
+                  <Box
+                    onClick={icon.callback}
+                    zIndex={1}
+                    color={
+                      selected === icon.key
+                        ? defaultTheme.colors.dark_blue
+                        : defaultTheme.colors.pink_0
+                    }
+                  >
+                    {icon.content}
+                  </Box>
                 </Tooltip>
               ))}
+              <WrapperIcon
+                left={icons.find((icon) => icon.key === selected)?.position}
+              />
             </IconBox>
           )}
         </Icon>
@@ -101,6 +127,19 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
     </>
   );
 };
+
+const WrapperIcon = styled(Box)<{ left?: number }>`
+  position: absolute;
+  top: 7px;
+  background: ${defaultTheme.colors.pink_0};
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 0.2s;
+`;
 
 const CardBox = styled(Box)`
   position: relative;
@@ -143,7 +182,7 @@ const IconBox = styled(Box)`
   position: absolute;
   inset: 10px;
   top: 0;
-  background: #fff;
+  background: ${defaultTheme.colors.dark_blue};
   border-radius: 50px;
   display: flex;
   align-items: center;

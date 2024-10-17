@@ -5,11 +5,6 @@ interface Props {
 }
 const withPage = (Comp) => {
   const Page = (props: any) => {
-    // if (document) {
-    //   const body = document.body;
-    //   body.style.backgroundImage = 'none';
-    // }
-
     return <Comp {...props} />;
   };
   Page.getInitialProps = async (ctx: any) => {

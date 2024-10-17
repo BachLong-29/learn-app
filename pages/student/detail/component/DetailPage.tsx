@@ -67,7 +67,6 @@ const DetailPage = (props: any) => {
         w="30%"
         h="90%"
       >
-        <Ball />
         <Box
           as="img"
           h="90%"
@@ -96,25 +95,6 @@ const ListItem = styled(Box)<{ selected?: boolean }>`
   font-size: ${(props) => (props.selected ? '20px' : '14px')};
   font-weight: 600;
   transition: 0.2s;
-`;
-const Ball = styled(Box)`
-  // clip-path: ellipse(44% 67% at 91% 100%);
-  clip-path: polygon(
-    74% 31%,
-    91% 31%,
-    100% 38%,
-    100% 100%,
-    31% 100%,
-    47% 62%,
-    61% 44%
-  );
-  background: #bbaa82;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-  top: 0;
-  left: 0;
 `;
 
 export default DetailPage;

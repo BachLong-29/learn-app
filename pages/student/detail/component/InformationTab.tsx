@@ -5,14 +5,6 @@ import styled from 'styled-components';
 
 const InformationTab = (props: any) => {
   const { data } = props;
-
-  useEffect(() => {
-    const body = document.body;
-    body.style.backgroundImage = `url(${data?.images?.[0].originImg})`;
-    body.style.backgroundRepeat = 'no-repeat';
-    body.style.backgroundSize = 'cover';
-  }, [JSON.stringify(data)]);
-
   return (
     <Box>
       <Rank>

@@ -10,7 +10,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: #f1e0de;
+  background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -27,8 +27,7 @@ a {
     font-family: 'Poppins', sans-serif;
     color: #393d52;
     min-height: 100vh;
-    background: #f1e0de;
-    /* ece3e1 */
+    background: #fff;
   }
 }
 

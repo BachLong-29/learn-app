@@ -43,7 +43,7 @@ const Card = styled(Box)`
 const CardBox = styled(Box)`
   position: absolute;
   inset: 10px;
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   border-radius: 25px;
   padding: 20px;
 `;
@@ -82,7 +82,7 @@ const Icon = styled(Box)`
 const IconBox = styled(Box)`
   position: absolute;
   inset: 10px;
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   border-radius: 50%;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;

@@ -36,7 +36,7 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
           style={{
             fontSize: 25,
             cursor: 'pointer',
-            color: defaultTheme.colors.pink_0,
+            color: defaultTheme.colors.pink,
           }}
         />
       ),
@@ -110,7 +110,7 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
                     color={
                       selected === icon.key
                         ? defaultTheme.colors.dark_blue
-                        : defaultTheme.colors.pink_0
+                        : defaultTheme.colors.pink
                     }
                   >
                     {icon.content}
@@ -130,7 +130,7 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
 
 const CardBox = styled(Box)`
   position: relative;
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   border-radius: 30px;
   margin: 15px;
   margin-top: 0;
@@ -140,7 +140,7 @@ const Icon = styled(Box)`
   position: absolute;
   width: 260px;
   height: 60px;
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   border-bottom-right-radius: 36px;
   transition: 0.5s;
   &::before {
@@ -152,7 +152,7 @@ const Icon = styled(Box)`
     height: 30px;
     background: transparent;
     border-top-left-radius: 30px;
-    box-shadow: -5px -5px 0 5px ${defaultTheme.colors.pink_0};
+    box-shadow: -5px -5px 0 5px ${defaultTheme.colors.pink};
   }
   &::after {
     content: '';
@@ -163,7 +163,7 @@ const Icon = styled(Box)`
     height: 30px;
     background: transparent;
     border-top-left-radius: 50px;
-    box-shadow: -5px -5px 0 5px ${defaultTheme.colors.pink_0};
+    box-shadow: -5px -5px 0 5px ${defaultTheme.colors.pink};
   }
 `;
 const IconBox = styled(Box)`
@@ -187,7 +187,7 @@ const Image = styled(Box)`
 const WrapperIcon = styled(Box)<{ left?: number }>`
   position: absolute;
   top: 7px;
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   padding: 2px;
   width: 30px;
   height: 30px;

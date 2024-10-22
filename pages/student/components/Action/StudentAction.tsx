@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-
 import ActionMenu from 'components/Action/ActionMenu';
 import ConfirmModal from 'ui-components/Modal/ConfirmModal';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
 import EditOutlined from '@ant-design/icons/EditOutlined';
-import { isEmpty } from 'lodash';
 import { useDeleteStudent } from 'core/student/usecase/deleteStudent';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export enum ActionType {
   EDIT = 'edit',

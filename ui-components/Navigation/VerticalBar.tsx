@@ -39,7 +39,7 @@ const VerticalBar = () => {
         onClick={goHome}
         style={{
           fontSize: '24px',
-          color: defaultTheme.colors.pink_0,
+          color: defaultTheme.colors.pink,
           cursor: 'pointer',
         }}
       />
@@ -47,7 +47,7 @@ const VerticalBar = () => {
         onClick={goStudentBoard}
         style={{
           fontSize: '24px',
-          color: defaultTheme.colors.pink_0,
+          color: defaultTheme.colors.pink,
           cursor: 'pointer',
         }}
       />
@@ -55,7 +55,7 @@ const VerticalBar = () => {
         onClick={goClassBoard}
         style={{
           fontSize: '24px',
-          color: defaultTheme.colors.pink_0,
+          color: defaultTheme.colors.pink,
           cursor: 'pointer',
         }}
       />

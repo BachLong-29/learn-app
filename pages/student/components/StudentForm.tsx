@@ -7,7 +7,6 @@ import { Title } from 'utils/styles/general';
 import defaultTheme from 'ui-components/theme/theme';
 import { memo } from 'react';
 import styled from 'styled-components';
-import withPage from 'components/withPage';
 
 interface Props {
   id?: string;

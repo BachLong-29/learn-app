@@ -29,7 +29,7 @@ const Footer = () => {
         position: 'relative',
         bottom: 0,
         height: '180px',
-        marginTop: '12px'
+        marginTop: '12px',
       }}
     >
       <Container>
@@ -51,7 +51,7 @@ const Footer = () => {
 const Container = styled(Flex)`
   width: 100%;
   background: ${defaultTheme.colors.dark_blue};
-  color: ${defaultTheme.colors.pink_0};
+  color: ${defaultTheme.colors.pink};
   padding: 20px;
   justify-content: center;
   &:not(:last-child) {

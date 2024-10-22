@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-
 import { Box } from 'ui-components/General/Box';
 import styled from 'styled-components';
 

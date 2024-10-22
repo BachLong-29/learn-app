@@ -1,4 +1,3 @@
-import DetailPage from './component/DetailPage';
 import Head from 'next/head';
 import StudentDetail from './component/StudentDetail';
 import studentApi from '../../api/studentService';

@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app';
 import { Box } from 'ui-components/General/Box';
 import Head from 'next/head';
 import MenuBar from 'ui-components/Navigation/MenuBar';
-import defaultTheme from 'ui-components/theme/theme';
 import { wrapper } from '../redux/store/store';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -17,20 +16,13 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="stylesheet" href="/styles/globals.css" />
       </Head>
 
-      <Box
-        style={{
-          // background: defaultTheme.colors.pink_0,
-          minHeight: '100vh',
-        }}
-      >
+      <Box minHeight="100vh">
         <MenuBar />
         <Box
           position="relative"
-          paddingTop="103px"
+          paddingTop="95px"
           w="100%"
-          h="calc(100vh - 103px)"
-          // display="flex"
-          // justifyContent="center"
+          h="calc(100vh - 95px)"
         >
           <Component {...pageProps} />
         </Box>

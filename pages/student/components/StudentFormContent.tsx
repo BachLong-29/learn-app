@@ -1,5 +1,4 @@
 import { FastField, useFormikContext } from 'formik';
-import React, { useMemo } from 'react';
 import { genderOptions, rankOptions } from 'utils/constants';
 
 import Banner from 'ui-components/Banner/Banner';
@@ -8,9 +7,9 @@ import InputField from 'components/Field/InputField';
 import MultiSwitchField from 'components/Field/MultiSwitchField';
 import SelectField from 'components/Field/SelectField';
 import UploadField from 'components/Field/UploadField';
-import { borderRadius } from '@xstyled/system';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
+import { useMemo } from 'react';
 
 const Grid = styled.div`
   padding: 20px;

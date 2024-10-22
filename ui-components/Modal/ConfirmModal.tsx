@@ -1,10 +1,8 @@
-import { Button, Modal } from 'antd';
-
 import ExclamationOutlined from '@ant-design/icons/ExclamationOutlined';
 import { Flex } from 'ui-components/General/Flex';
+import { Modal } from 'antd';
 import NegativeButton from 'ui-components/Button/NegativeButton';
 import PositiveButton from 'ui-components/Button/PositiveButton';
-import RightOutlined from '@ant-design/icons/RightOutlined';
 import defaultTheme from 'ui-components/theme/theme';
 
 const ConfirmModal = (props: any) => {

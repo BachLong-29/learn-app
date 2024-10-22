@@ -1,5 +1,4 @@
 import { CustomButton } from './styles';
-import { ReactNode } from 'react';
 
 const NegativeButton = (props: any) => {
   return (

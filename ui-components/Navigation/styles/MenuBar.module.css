@@ -12,8 +12,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 5px 35px 15px 35px;
+  width: calc(100% - 40px);
+  padding: 20px ;
   z-index: 10000;
   display: flex;
   justify-content: center;
@@ -32,6 +32,7 @@
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  margin-left: auto;
 }
 .header.sticky .logo {
   color: #f1e0de;

@@ -1,7 +1,5 @@
-import React, { CSSProperties } from 'react';
-
 import { $FixType } from '../../../utils/constants';
-import { Input } from 'antd';
+import { CSSProperties } from 'react';
 import UploadImages from 'ui-components/Upload/UploadImages';
 import Wrapper from './Wrapper';
 

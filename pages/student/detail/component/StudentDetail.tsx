@@ -1,9 +1,7 @@
 import { Box } from 'ui-components/General/Box';
 import { Flex } from 'ui-components/General/Flex';
-import Image from 'next/image';
 import InvertedBorderCard from 'components/Card/InvertedBorderCard';
 import InvertedCard from 'components/Card/InvertedCard';
-import React from 'react';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
 
@@ -41,7 +39,7 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
           <Box
             style={{
-              color: defaultTheme.colors.pink_0,
+              color: defaultTheme.colors.pink,
               fontSize: '16px',
               marginBottom: '10px',
               marginLeft: '10px',
@@ -61,7 +59,7 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
           <Box
             style={{
-              color: defaultTheme.colors.pink_0,
+              color: defaultTheme.colors.pink,
               fontSize: '16px',
               marginBottom: '10px',
               marginLeft: '10px',
@@ -157,13 +155,13 @@ const DateBox = styled(Box)`
   height: 80px;
   border-radius: 30px;
   backdrop-filter: blur(10px);
-  border: 3px solid ${defaultTheme.colors.pink_0};
+  border: 3px solid ${defaultTheme.colors.pink};
   display: flex;
   align-items: end;
 `;
 
 const DescriptionContainer = styled(Box)`
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   width: 30%;
   height: 65vh;
   margin: 15px;
@@ -174,7 +172,7 @@ const DescriptionContainer = styled(Box)`
   border: 10px solid ${defaultTheme.colors.dark_blue};
 `;
 const OtherContainer = styled(Box)`
-  background: ${defaultTheme.colors.pink_0};
+  background: ${defaultTheme.colors.pink};
   height: 15vh;
   margin: 15px;
   padding: 20px;

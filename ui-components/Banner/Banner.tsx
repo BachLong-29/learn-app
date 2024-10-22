@@ -1,9 +1,6 @@
-import styled, { CSSProperties } from 'styled-components';
-
 import { Box } from 'ui-components/General/Box';
 import React from 'react';
-
-// import Image from 'next/image';
+import styled from 'styled-components';
 
 const Container = styled(Box)`
   position: relative;

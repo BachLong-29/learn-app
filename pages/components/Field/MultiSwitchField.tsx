@@ -1,9 +1,6 @@
 import { $FixType } from '../../../utils/constants';
 import MultiSwitch from 'ui-components/MultiSwitch/MultiSwitch';
-import React from 'react';
-import { Select } from 'antd';
 import Wrapper from './Wrapper';
-import { genderOptions } from '../../../utils/constants';
 
 type MultiSwitchFieldProps = {
   field: $FixType;

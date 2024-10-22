@@ -1,8 +1,6 @@
 import { $FixType } from '../../../utils/constants';
-import React from 'react';
 import { Select } from 'antd';
 import Wrapper from './Wrapper';
-import { genderOptions } from './../../../utils/constants';
 import styled from 'styled-components';
 
 type SelectFieldProps = {

@@ -17,7 +17,7 @@ const CreateButton = ({ onClick }) => {
         <Circle isHover={isHover}>
           <PlusOutlined
             style={{
-              color: defaultTheme.colors.pink_0,
+              color: defaultTheme.colors.pink,
               fontSize: 16,
             }}
           />
@@ -59,7 +59,7 @@ const LabelBehind = styled(Flex)<{ isHover?: boolean }>`
   align-items: center;
   transition: 1s;
   justify-content: center;
-  color: ${defaultTheme.colors.pink_0};
+  color: ${defaultTheme.colors.pink};
   text-wrap: nowrap;
 `;
 

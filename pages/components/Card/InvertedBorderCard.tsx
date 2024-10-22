@@ -128,24 +128,12 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
   );
 };
 
-const WrapperIcon = styled(Box)<{ left?: number }>`
-  position: absolute;
-  top: 7px;
-  background: ${defaultTheme.colors.pink_0};
-  padding: 2px;
-  width: 30px;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  transition: 0.2s;
-`;
-
 const CardBox = styled(Box)`
   position: relative;
   background: ${defaultTheme.colors.pink_0};
   border-radius: 30px;
   margin: 15px;
+  margin-top: 0;
 `;
 const Icon = styled(Box)`
   top: 0;
@@ -194,6 +182,19 @@ const Image = styled(Box)`
   width: 100%;
   height: 100%;
   border-radius: 30px;
+`;
+
+const WrapperIcon = styled(Box)<{ left?: number }>`
+  position: absolute;
+  top: 7px;
+  background: ${defaultTheme.colors.pink_0};
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 0.2s;
 `;
 
 export default InvertedBorderCard;

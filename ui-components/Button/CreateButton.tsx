@@ -22,18 +22,18 @@ const CreateButton = ({ onClick }) => {
             }}
           />
         </Circle>
-        <LabelBehind isHover={isHover}>Create a new student</LabelBehind>
+        <LabelBehind isHover={isHover}>New</LabelBehind>
       </Container>
     </>
   );
 };
 
 const Container = styled(Flex)<{ isHover?: boolean }>`
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: ${(props) => (props.isHover ? '250px' : '40px')};
-  transition: 0.3s;
+  /* position: fixed; */
+  /* bottom: 30px;
+  right: 30px; */
+  width: ${(props) => (props.isHover ? '100px' : '40px')};
+  transition: 100ms;
   background-color: ${(props) =>
     props.isHover ? defaultTheme.colors.dark_blue : 'transparent'};
   border-radius: 50px;

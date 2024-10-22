@@ -19,7 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
       <Box
         style={{
-          background: defaultTheme.colors.pink_0,
+          // background: defaultTheme.colors.pink_0,
           minHeight: '100vh',
         }}
       >
@@ -29,6 +29,8 @@ const App = ({ Component, pageProps }: AppProps) => {
           paddingTop="103px"
           w="100%"
           h="calc(100vh - 103px)"
+          // display="flex"
+          // justifyContent="center"
         >
           <Component {...pageProps} />
         </Box>

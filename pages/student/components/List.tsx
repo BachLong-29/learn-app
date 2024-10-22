@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from 'ui-components/General/Box';
 import CreateButton from 'ui-components/Button/CreateButton';
 import { Table } from 'antd';
+import { Title } from 'utils/styles/general';
 import { getAllStudent } from '../../../redux/actions/student.action';
 import getStudentCols from 'core/student/utils/getStudentCols';
 import styled from 'styled-components';
@@ -10,19 +11,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import withPage from 'components/withPage';
 
-const Button = styled.div`
-  background: #ff4e8e;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-const Title = styled.div`
-  padding: 4px 12px;
-`;
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 8px;
 `;
 
@@ -39,6 +31,7 @@ const List = () => {
     return (
       <Flex>
         <Title>Student Board</Title>
+        <CreateButton onClick={goCreateStudent} />
       </Flex>
     );
   };
@@ -47,15 +40,14 @@ const List = () => {
     dispatch(getAllStudent());
   }, []);
   return (
-    <Box p="20px">
+    <Box p="0 20px 0 20px">
       {renderHeader()}
       <Table
         bordered
         columns={columns}
         dataSource={studentList}
-        pagination={{ pageSize: 18 }}
+        pagination={{ pageSize: 19 }}
       />
-      <CreateButton onClick={goCreateStudent} />
     </Box>
   );
 };

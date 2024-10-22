@@ -8,7 +8,7 @@ export const CustomButton = styled(Button)<{genre?: string}>`
   background: ${props => props.genre === 'positive' ?   defaultTheme.colors.pink_0 : defaultTheme.colors.white};
   font-weight: 700;
   transition: 500ms;
-  border-radius: 4px;
+  border-radius: 30px;
   &:hover{
     color: ${defaultTheme.colors.dark_blue} !important;
     border-color: ${defaultTheme.colors.dark_blue} !important;

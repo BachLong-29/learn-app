@@ -3,9 +3,11 @@ import { Form, Formik } from 'formik';
 import { $FixType } from 'utils/constants';
 import { Box } from 'ui-components/General/Box';
 import StudentFormContent from './StudentFormContent';
+import { Title } from 'utils/styles/general';
 import defaultTheme from 'ui-components/theme/theme';
 import { memo } from 'react';
 import styled from 'styled-components';
+import withPage from 'components/withPage';
 
 interface Props {
   id?: string;
@@ -26,9 +28,16 @@ const StudentForm = (props: Props) => {
     rank: data?.rank,
     images: data?.images,
   };
-
+  const renderHeader = () => {
+    return (
+      <Flex>
+        <Title>Create student</Title>
+      </Flex>
+    );
+  };
   return (
-    <Box p="0 50px" mt="20px">
+    <Box p="0 20px 0 20px">
+      {renderHeader()}
       <Formik initialValues={initialValues} onSubmit={() => {}}>
         {(form) => {
           return (
@@ -47,8 +56,14 @@ const StudentForm = (props: Props) => {
 const Wrapper = styled(Box)`
   display: flex;
   border: 2px ${defaultTheme.colors.dark_blue} solid;
-  border-radius: 5px;
-  height: calc(100vh - 150px);
+  border-radius: 30px;
+  height: calc(100vh - 180px);
+`;
+const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 `;
 
 export default memo(StudentForm);

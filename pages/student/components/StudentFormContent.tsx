@@ -8,6 +8,7 @@ import InputField from 'components/Field/InputField';
 import MultiSwitchField from 'components/Field/MultiSwitchField';
 import SelectField from 'components/Field/SelectField';
 import UploadField from 'components/Field/UploadField';
+import { borderRadius } from '@xstyled/system';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
 
@@ -100,8 +101,12 @@ const StudentFormContent = (props: any) => {
     return (
       <Banner
         height="100%"
-        width="30%"
-        styles={{ background: defaultTheme.colors.dark_blue }}
+        width="50%"
+        styles={{
+          background: defaultTheme.colors.dark_blue,
+          borderBottomLeftRadius: '24px',
+          borderTopLeftRadius: '24px',
+        }}
         image={
           form?.values?.images?.[0]?.originImg &&
           form?.values?.images?.[0]?.originImg

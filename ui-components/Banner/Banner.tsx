@@ -25,9 +25,18 @@ type Iprops = {
 const Banner = (props: Iprops) => {
   const { width, height, image, styles } = props;
   return (
-    <Container w={width} h={height} {...styles}>
+    <Container w={width} h={height} style={{ ...styles }}>
       {image ? (
-        <Box as="img" src={image} h="100%" w="100%" />
+        <Box
+          as="img"
+          src={image}
+          h="100%"
+          w="100%"
+          style={{
+            borderTopLeftRadius: '30px',
+            borderBottomLeftRadius: '30px',
+          }}
+        />
       ) : (
         <Image alt="img-student" src="/images/background/backgroundform.png" />
       )}

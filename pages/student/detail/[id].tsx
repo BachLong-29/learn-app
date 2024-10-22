@@ -4,11 +4,11 @@ import StudentDetail from './component/StudentDetail';
 import studentApi from '../../api/studentService';
 import withPage from 'components/withPage';
 
-type EditProps = {
+type DetailProps = {
   data: any;
   id: string;
 };
-const DetailStudent = (props: EditProps) => {
+const DetailStudent = (props: DetailProps) => {
   const { data, id } = props;
   return (
     <>

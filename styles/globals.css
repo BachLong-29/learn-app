@@ -10,8 +10,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: #fff;
   font-family: 'Poppins', sans-serif;
+  background: #f1e0de;
 }
 
 a {
@@ -27,11 +27,14 @@ a {
     font-family: 'Poppins', sans-serif;
     color: #393d52;
     min-height: 100vh;
-    background: #fff;
   }
 }
 
 .successModal .ant-modal-content {
+  padding: 0;
+}
+
+.confirmation .ant-modal-content {
   padding: 0;
 }
 

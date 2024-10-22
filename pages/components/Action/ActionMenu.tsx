@@ -25,7 +25,7 @@ interface IMenuItem {
 }
 
 interface ActionMenuProps {
-  data: IMenuItem[];
+  data: any[];
   useTranslate: boolean;
   onItemSelect?: (any: any) => void;
   dropdownComponent?: () => React.ReactNode;
@@ -47,7 +47,7 @@ const ActionMenu = ({
     },
     [onItemSelect]
   );
-
+  console.log({ data });
   const menu = useMemo(
     () => (
       <Menu onClick={handleItemSelect}>
@@ -57,15 +57,11 @@ const ActionMenu = ({
             <>
               <Menu.Item
                 key={item.value}
+                onClick={item.onOk}
                 icon={
                   !!item.icon && (
                     <Box as="span" mr={2}>
                       {typeof item.icon === 'string' ? (
-                        // <AtalinkIcon
-                        //   center
-                        //   // width={20}
-                        //   name={item.icon as AtalinkIconName}
-                        // />
                         item.icon
                       ) : isValidElement(item.icon) ? (
                         item.icon

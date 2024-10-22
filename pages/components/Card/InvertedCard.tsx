@@ -1,4 +1,5 @@
 import { Box } from 'ui-components/General/Box';
+import React from 'react';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
 
@@ -6,18 +7,22 @@ interface iInvertedCard {
   hasIcon?: boolean;
   width?: number | string;
   height?: number | string;
+  children?: React.ReactNode;
 }
 
 const InvertedCard = (props: iInvertedCard) => {
-  const { hasIcon, width = 300, height = 400 } = props;
+  const { hasIcon, width = 300, height = 400, children } = props;
 
   return (
     <Card w={width} h={height}>
       <CardBox>
+        {children}
         <Icon>
-          <IconBox>
-            <Box as="img" alt="next" src="/animate/next.gif" w={70} h={70} />
-          </IconBox>
+          {hasIcon && (
+            <IconBox>
+              <Box as="img" alt="next" src="/animate/next.gif" w={70} h={70} />
+            </IconBox>
+          )}
         </Icon>
       </CardBox>
     </Card>
@@ -27,10 +32,11 @@ const InvertedCard = (props: iInvertedCard) => {
 const Card = styled(Box)`
   position: relative;
   background: ${defaultTheme.colors.dark_blue};
-  border-radius: 20px;
+  border-radius: 30px;
   border-bottom-right-radius: 70px;
   overflow: hidden;
   margin: 15px;
+  margin-top: 0;
   padding: 20px;
 `;
 
@@ -38,7 +44,8 @@ const CardBox = styled(Box)`
   position: absolute;
   inset: 10px;
   background: ${defaultTheme.colors.pink_0};
-  border-radius: 10px;
+  border-radius: 25px;
+  padding: 20px;
 `;
 const Icon = styled(Box)`
   position: absolute;

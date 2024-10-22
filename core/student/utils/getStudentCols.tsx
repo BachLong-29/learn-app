@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { NextRouter } from 'next/router';
+import StudentAction from 'pages/student/components/Action/StudentAction';
 import { StudentKeyValue } from 'utils/StudentKeyValues';
 
 type columns = {};
@@ -34,7 +35,7 @@ const getStudentCols = (props: columns) => {
       title: '',
       dataIndex: 'edit',
       render: (_: any, record: any) => {
-        return <></>;
+        return <StudentAction studentId={record.id} />;
         // <MenuAction studentId={record.id} data={record} />;
       },
       width: 20,

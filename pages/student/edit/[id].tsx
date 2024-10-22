@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import withPage from 'components/withPage';
 
 type EditProps = {
   data: any;
@@ -94,4 +95,4 @@ const FormFooter = styled(Flex)`
   gap: 40px;
 `;
 
-export default EditPage;
+export default withPage(EditPage);

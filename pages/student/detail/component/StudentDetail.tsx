@@ -19,7 +19,7 @@ const StudentDetail = (props: iStudentDetail) => {
         <InvertedBorderCard
           imageString={data?.images?.[0].originImg}
           width="70%"
-          height="calc(65vh + 44px)"
+          height="calc(65vh + 60px)"
           hasIcon
         />
         <DateBox>
@@ -99,7 +99,9 @@ const StudentDetail = (props: iStudentDetail) => {
           </Box>
         </DescriptionContainer>
       </Flex>
-      <InvertedCard width="auto" height="15vh" />
+      <InvertedCard width="auto" height="17vh" hasIcon>
+        Other
+      </InvertedCard>
       {/* <OtherContainer>Other</OtherContainer> */}
     </Box>
   );
@@ -165,9 +167,11 @@ const DescriptionContainer = styled(Box)`
   width: 30%;
   height: 65vh;
   margin: 15px;
+  margin-top: 0;
+  margin-left: 0;
   padding: 20px;
   border-radius: 30px;
-  border: 2px solid ${defaultTheme.colors.dark_blue};
+  border: 10px solid ${defaultTheme.colors.dark_blue};
 `;
 const OtherContainer = styled(Box)`
   background: ${defaultTheme.colors.pink_0};

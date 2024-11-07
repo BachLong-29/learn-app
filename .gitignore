@@ -28,6 +28,10 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# db.json
+db.json
+To-do.md
+
 # vercel
 .vercel
 

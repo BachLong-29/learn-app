@@ -1,6 +1,7 @@
 import { Dropdown, MenuProps } from 'antd';
 import { useEffect, useState } from 'react';
 
+import { Box } from 'ui-components/General/Box';
 import { Flex } from 'ui-components/General/Flex';
 import Image from 'next/image';
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
@@ -40,17 +41,17 @@ const MenuBar = () => {
       type: 'divider',
     },
     {
-      key: '2',
-      label: 'Sign out',
-      icon: <LogoutOutlined />,
+      key: '4',
+      label: 'Settings',
+      icon: <SettingOutlined />,
     },
     {
       type: 'divider',
     },
     {
-      key: '4',
-      label: 'Settings',
-      icon: <SettingOutlined />,
+      key: '2',
+      label: 'Sign out',
+      icon: <LogoutOutlined />,
     },
   ];
   return (
@@ -63,7 +64,7 @@ const MenuBar = () => {
             학생<span>.</span>
           </a>
 
-          <Dropdown menu={{ items }}>
+          <Dropdown placement="bottomRight" menu={{ items }}>
             <Flex
               style={{
                 marginLeft: 'auto',
@@ -75,6 +76,7 @@ const MenuBar = () => {
                 justifyContent: 'flex-start',
                 gap: '10px',
                 cursor: 'pointer',
+                maxWidth: '120px',
               }}
             >
               <Image
@@ -87,7 +89,15 @@ const MenuBar = () => {
                   border: `1px solid ${defaultTheme.colors.pink}`,
                 }}
               />
-              Hi, Markky
+              <Box
+                style={{
+                  whiteSpace: 'nowrap',
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                }}
+              >
+                Markky
+              </Box>
             </Flex>
           </Dropdown>
         </div>

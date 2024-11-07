@@ -3,7 +3,8 @@ import { Form, Formik } from 'formik';
 import { $FixType } from 'utils/constants';
 import { Box } from 'ui-components/General/Box';
 import StudentFormContent from './StudentFormContent';
-import { Title } from 'utils/styles/general';
+import { StudentKeyValue } from 'utils/StudentKeyValues';
+import dayjs from '../../../dayjs-config';
 import defaultTheme from 'ui-components/theme/theme';
 import { memo } from 'react';
 import styled from 'styled-components';
@@ -13,31 +14,36 @@ interface Props {
   data?: $FixType;
   isEdit?: boolean;
   renderAction: (value: any) => any;
+  renderHeader: React.ReactNode;
 }
 
 const StudentForm = (props: Props) => {
-  const { data, renderAction } = props;
-  // split mapping function to other file
+  const { data, renderAction, renderHeader } = props;
 
+  // split mapping function to other file
   const initialValues = {
-    name: data?.name,
-    age: data?.age,
-    gender: data?.gender ?? 'male',
-    nickname: data?.nickname,
-    rank: data?.rank,
-    images: data?.images,
+    [StudentKeyValue.NAME]: data?.name,
+    [StudentKeyValue.YEAR]: data?.year && dayjs(data?.year),
+    [StudentKeyValue.GENDER]: data?.gender ?? 'male',
+    [StudentKeyValue.NICK_NAME]: data?.nickname,
+    [StudentKeyValue.RANK]: data?.rank,
+    [StudentKeyValue.IMAGES]: data?.images,
+    [StudentKeyValue.DOB]: data?.dob && dayjs(data?.dob),
+    [StudentKeyValue.MAJOR]: data?.major,
+    [StudentKeyValue.EMAIL]: data?.email,
+    [StudentKeyValue.PHONE]: data?.phone,
+    [StudentKeyValue.ADDRESS]: data?.address,
+    [StudentKeyValue.DESC]: data?.desc,
   };
-  const renderHeader = () => {
-    return (
-      <Flex>
-        <Title>Create student</Title>
-      </Flex>
-    );
-  };
+
   return (
     <Box p="0 20px 0 20px">
-      {renderHeader()}
-      <Formik initialValues={initialValues} onSubmit={() => {}}>
+      {renderHeader}
+      <Formik
+        validateOnChange
+        initialValues={initialValues}
+        onSubmit={() => {}}
+      >
         {(form) => {
           return (
             <Form>

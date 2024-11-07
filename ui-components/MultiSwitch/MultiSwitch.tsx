@@ -40,7 +40,7 @@ const Container = styled(Box)`
   border-radius: 4px;
   padding: 4px;
   gap: 8px;
-  width: 100%;
+  width: calc(100% - 8px);
 `;
 const Item = styled(Box)<{ selected?: boolean }>`
   display: flex;

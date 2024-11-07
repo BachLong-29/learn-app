@@ -55,6 +55,29 @@ export const rankOptions = [
     label: Rank.RANK_SSS,
   },
 ];
+export const majors = {
+  "Information Technology": { value: "Information Technology", label: "Information Technology", abbreviation: "IT", key: "IT" },
+  "Computer Science": { value: "Computer Science", label: "Computer Science", abbreviation: "CS", key: "CS" },
+  "Software Engineering": { value: "Software Engineering", label: "Software Engineering", abbreviation: "SE", key: "SE" },
+  "Economics": { value: "Economics", label: "Economics", abbreviation: "ECON", key: "ECON" },
+  "Business Administration": { value: "Business Administration", label: "Business Administration", abbreviation: "BA", key: "BA" },
+  "Finance and Banking": { value: "Finance and Banking", label: "Finance and Banking", abbreviation: "FB", key: "FB" },
+  "Marketing": { value: "Marketing", label: "Marketing", abbreviation: "MKT", key: "MKT" },
+  "Accounting": { value: "Accounting", label: "Accounting", abbreviation: "ACC", key: "ACC" },
+  "Medicine": { value: "Medicine", label: "Medicine", abbreviation: "MED", key: "MED" },
+  "Pharmacy": { value: "Pharmacy", label: "Pharmacy", abbreviation: "PHAR", key: "PHAR" },
+  "Mechanical Engineering": { value: "Mechanical Engineering", label: "Mechanical Engineering", abbreviation: "ME", key: "ME" },
+  "Architecture": { value: "Architecture", label: "Architecture", abbreviation: "ARCH", key: "ARCH" },
+  "Law": { value: "Law", label: "Law", abbreviation: "LAW", key: "LAW" },
+  "Psychology": { value: "Psychology", label: "Psychology", abbreviation: "PSY", key: "PSY" },
+  "Education Management": { value: "Education Management", label: "Education Management", abbreviation: "EM", key: "EM" },
+  "Biology": { value: "Biology", label: "Biology", abbreviation: "BIO", key: "BIO" },
+  "Chemistry": { value: "Chemistry", label: "Chemistry", abbreviation: "CHEM", key: "CHEM" },
+  "Physics": { value: "Physics", label: "Physics", abbreviation: "PHYS", key: "PHYS" },
+  "English Language": { value: "English Language", label: "English Language", abbreviation: "EL", key: "EL" },
+  "Graphic Design": { value: "Graphic Design", label: "Graphic Design", abbreviation: "GD", key: "GD" }
+};
+
 
 export type Skill = {
   id: string;

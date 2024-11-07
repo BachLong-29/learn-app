@@ -11,11 +11,8 @@ const LoginForm = () => {
   const [currentForm, setCurrentForm] = useState<FormTypes>('sign-in');
 
   const handleSwitchForm = (type: FormTypes) => {
-    console.log({ type });
     setCurrentForm(type);
   };
-
-  console.log({ currentForm });
 
   const img = useMemo(() => {
     return (

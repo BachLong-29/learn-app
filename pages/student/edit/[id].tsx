@@ -1,13 +1,13 @@
-import { Flex } from 'ui-components/General/Flex';
+import { FormFooter, Title, WrappedTitle } from 'utils/styles/general';
+
 import NegativeButton from 'ui-components/Button/NegativeButton';
 import PositiveButton from 'ui-components/Button/PositiveButton';
 import StudentForm from '../components/StudentForm';
+import { StudentKeyValue } from 'utils/StudentKeyValues';
 import SuccessModal from 'ui-components/Modal/SuccessModal';
-import defaultTheme from 'ui-components/theme/theme';
 import { editStudentRedux } from 'redux/actions/student.action';
 import errorModal from 'ui-components/Modal/ErrorModal';
 import studentApi from '../../api/studentService';
-import styled from 'styled-components';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
@@ -24,12 +24,18 @@ const EditPage = (props: EditProps) => {
 
   const handleSubmit = (data: any) => {
     const mappingData = {
-      name: data.name,
-      age: data.age,
-      gender: data.gender,
-      nickname: data.nickname,
-      rank: data.rank,
-      images: data.images,
+      [StudentKeyValue.NAME]: data.name,
+      [StudentKeyValue.YEAR]: data.year,
+      [StudentKeyValue.GENDER]: data.gender,
+      [StudentKeyValue.NICK_NAME]: data.nickname,
+      [StudentKeyValue.RANK]: data.rank,
+      [StudentKeyValue.IMAGES]: data.images,
+      [StudentKeyValue.DOB]: data.dob,
+      [StudentKeyValue.MAJOR]: data.major,
+      [StudentKeyValue.EMAIL]: data.email,
+      [StudentKeyValue.PHONE]: data.phone,
+      [StudentKeyValue.ADDRESS]: data.address,
+      [StudentKeyValue.DESC]: data.desc,
     };
     studentApi
       .updateStudent(id, mappingData)
@@ -76,7 +82,16 @@ const EditPage = (props: EditProps) => {
   );
   return (
     <>
-      <StudentForm data={data} isEdit={true} renderAction={renderAction} />
+      <StudentForm
+        data={data}
+        isEdit={true}
+        renderAction={renderAction}
+        renderHeader={
+          <WrappedTitle>
+            <Title>Edit student</Title>
+          </WrappedTitle>
+        }
+      />
     </>
   );
 };
@@ -85,14 +100,5 @@ EditPage.getInitialProps = async (ctx: any) => {
   const res = await studentApi.getStudentById(studentId);
   return { data: res.data, id: studentId };
 };
-
-const FormFooter = styled(Flex)`
-  background: ${defaultTheme.colors.white};
-  border-end-end-radius: 4px;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  gap: 40px;
-`;
 
 export default withPage(EditPage);

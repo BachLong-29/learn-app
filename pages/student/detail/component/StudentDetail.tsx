@@ -1,9 +1,13 @@
 import { Box } from 'ui-components/General/Box';
+import DateBox from './DateBox';
 import { Flex } from 'ui-components/General/Flex';
 import InvertedBorderCard from 'components/Card/InvertedBorderCard';
 import InvertedCard from 'components/Card/InvertedCard';
+import { StudentKeyValue } from 'utils/StudentKeyValues';
+import { Title } from 'utils/styles/general';
 import defaultTheme from 'ui-components/theme/theme';
 import styled from 'styled-components';
+import useBreakpoint from 'ui-components/Grid';
 
 interface iStudentDetail {
   data: any;
@@ -11,99 +15,86 @@ interface iStudentDetail {
 
 const StudentDetail = (props: iStudentDetail) => {
   const { data } = props;
+
+  const screens = useBreakpoint();
+  const fields = [
+    {
+      key: StudentKeyValue.ADDRESS,
+      label: 'Address',
+      content: data?.address,
+    },
+    {
+      key: StudentKeyValue.PHONE,
+      label: 'Phone',
+      content: data?.phone,
+    },
+    {
+      key: StudentKeyValue.MAJOR,
+      label: 'Major',
+      content: data?.major,
+    },
+  ];
   return (
     <Box w="100%">
-      <Flex position="relative">
+      <Flex position="relative" flexWrap={screens.lg ? 'unset' : 'wrap'}>
         <InvertedBorderCard
           imageString={data?.images?.[0].originImg}
-          width="70%"
+          width={screens.lg ? '70%' : '100%'}
           height="calc(65vh + 60px)"
           hasIcon
         />
-        <DateBox>
-          <Box
-            style={{
-              background: '#fb4625',
-              color: '#fff',
-              fontSize: '28px',
-              height: 'calc(100% - 20px)',
-              padding: '10px',
-              borderRadius: '25px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '40%',
-            }}
-          >
-            2000
-          </Box>
-          <Box
-            style={{
-              color: defaultTheme.colors.pink,
-              fontSize: '16px',
-              marginBottom: '10px',
-              marginLeft: '10px',
-            }}
-          >
-            <Box
-              style={{
-                fontSize: '28px',
-                display: 'inline-block',
-                marginRight: '4px',
-                color: '#fff396',
-              }}
-            >
-              29
-            </Box>
-            DD
-          </Box>
-          <Box
-            style={{
-              color: defaultTheme.colors.pink,
-              fontSize: '16px',
-              marginBottom: '10px',
-              marginLeft: '10px',
-            }}
-          >
-            <Box
-              style={{
-                fontSize: '28px',
-                display: 'inline-block',
-                marginRight: '4px',
-                color: '#fff396',
-              }}
-            >
-              11
-            </Box>
-            MM
-          </Box>
-        </DateBox>
-
+        <DateBox dateOfBirth={data?.dob} />
         <DescriptionContainer>
-          <Rank>
+          <Rank fontSize={screens.lg ? '50px' : '40px'}>
             {data?.rank || ''}
-            <RankText>RANK</RankText>
+            <RankText paddingTop={screens.lg ? '18px' : '10px'}>RANK</RankText>
           </Rank>
           <Box>{`The student ${data?.level || ''}.`}</Box>
-          <Name>{data?.name || ''}</Name>
+          <Name fontSize={screens.lg ? '60px' : '40px'}>
+            {data?.name || ''}
+          </Name>
           <NickName>({data?.nickname || ''})</NickName>
-          <Box as="p">
-            Erling Braut Haaland (né Håland; born 21 July 2000) is a Norwegian
-            professional footballer who plays as a striker for Premier League
-            club Manchester City and the Norway national team. Erling Braut
-            Haaland (né Håland; born 21 July 2000) is a Norwegian professional
-            footballer who plays as a striker for Premier League club Manchester
-            City and the Norway national team.
+          <Box
+            textAlign="justify"
+            as="p"
+            display={screens.lg ? 'block' : 'none'}
+          >
+            {data?.desc || ''}
           </Box>
         </DescriptionContainer>
       </Flex>
-      <InvertedCard width="auto" height="17vh" hasIcon>
-        Other
+      <InvertedCard width="auto" height="auto" hasIcon>
+        <Flex w="calc(100% - 220px)" flexDirection="column">
+          <Properties>Properties.</Properties>
+          <Grid>
+            {fields.map((item) => (
+              <>
+                <Flex justifyContent="end">{`${item.label}:`}</Flex>
+                <Box key={item.key}>{item.content}</Box>
+              </>
+            ))}
+          </Grid>
+        </Flex>
       </InvertedCard>
-      {/* <OtherContainer>Other</OtherContainer> */}
     </Box>
   );
 };
+
+const Grid = styled.div`
+  padding: 8px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  height: fit-content;
+`;
+
+const Properties = styled(Title)`
+  font-weight: 400;
+  border-radius: 10px;
+  color: ${defaultTheme.colors.dark_blue};
+  font-size: 40px;
+  text-align: center;
+`;
 
 const Rank = styled(Box)`
   background: -webkit-linear-gradient(#ae8625, #f7ef8a);
@@ -112,7 +103,6 @@ const Rank = styled(Box)`
   text-transform: uppercase;
   justify-content: center;
   font-weight: 900;
-  font-size: 50px;
   display: flex;
   -webkit-background-clip: text;
 `;
@@ -121,7 +111,6 @@ const RankText = styled(Box)`
   -webkit-text-fill-color: transparent;
   text-transform: capitalize;
   background: ${defaultTheme.colors.black};
-  padding-top: 18px;
   padding-left: 12px;
   font-size: 30px;
   width: 100%;
@@ -132,8 +121,6 @@ const Name = styled(Box)`
   font-family: 'Rubik Vinyl', cursive;
   letter-spacing: 1px;
   font-weight: 600;
-  font-size: 60px;
-
   display: -webkit-box;
   max-width: 400px;
   -webkit-line-clamp: 2;
@@ -146,21 +133,17 @@ const NickName = styled(Box)`
   font-size: 16px;
 `;
 
-const DateBox = styled(Box)`
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  padding: 5px;
-  width: 300px;
-  height: 80px;
-  border-radius: 30px;
-  backdrop-filter: blur(10px);
-  border: 3px solid ${defaultTheme.colors.pink};
-  display: flex;
-  align-items: end;
-`;
-
 const DescriptionContainer = styled(Box)`
+  @media only screen and (max-width: 990px) {
+    position: absolute;
+    width: 330px;
+    height: 170px;
+    bottom: 10px;
+    left: 20px;
+    backdrop-filter: blur(28px);
+    background: rgba(241, 224, 222, 0.71);
+    padding: 10px;
+  }
   background: ${defaultTheme.colors.pink};
   width: 30%;
   height: 65vh;
@@ -171,13 +154,4 @@ const DescriptionContainer = styled(Box)`
   border-radius: 30px;
   border: 10px solid ${defaultTheme.colors.dark_blue};
 `;
-const OtherContainer = styled(Box)`
-  background: ${defaultTheme.colors.pink};
-  height: 15vh;
-  margin: 15px;
-  padding: 20px;
-  border-radius: 30px;
-  border: 2px solid ${defaultTheme.colors.dark_blue};
-`;
-
 export default StudentDetail;

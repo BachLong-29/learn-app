@@ -12,12 +12,22 @@ type InputFieldProps = {
   disable?: boolean;
   label?: string;
   wrapperStyle?: CSSProperties;
+  isRequired?: boolean;
 };
 
 const InputField = (props: InputFieldProps) => {
-  const { field, form, placeholder, label, type, wrapperStyle } = props;
+  const {
+    field,
+    form,
+    placeholder,
+    label,
+    type,
+    wrapperStyle,
+    isRequired,
+    ...rest
+  } = props;
   return (
-    <Wrapper label={label} style={wrapperStyle}>
+    <Wrapper label={label} style={wrapperStyle} isRequired={isRequired}>
       <Input
         autoComplete="off"
         style={{ borderRadius: '4px' }}
@@ -25,6 +35,7 @@ const InputField = (props: InputFieldProps) => {
         placeholder={placeholder}
         type={type}
         {...field}
+        {...rest}
       />
     </Wrapper>
   );

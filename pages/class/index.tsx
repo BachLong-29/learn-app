@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Todo from 'ui-components/TodoPage/Todo';
+import withPage from 'components/withPage';
 
-export default function Class() {
+const Class = () => {
   return (
     <div>
       <Head>
@@ -11,4 +12,8 @@ export default function Class() {
       <Todo />
     </div>
   );
-}
+};
+
+Class.getInitialProps = async (ctx: any) => {};
+
+export default withPage(Class);

@@ -6,7 +6,8 @@ const defaultTheme = {
         success: '#8ddaaa',
         error: '#f56064',
         blue_purple: '#677eff',
-        black: "#000"
+        black: "#000",
+        orange: "#fb4625"
     }
 }
 

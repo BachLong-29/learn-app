@@ -7,10 +7,11 @@ const Container = styled(Box)`
   border-right: 2px #393d52 solid;
 `;
 const Image = styled.img`
-  width: 100%;
+  width: calc(100% - 16px);
   height: 50%;
   position: absolute;
   bottom: 0;
+  padding: 8px;
 `;
 type Iprops = {
   width?: number | string;
@@ -35,7 +36,7 @@ const Banner = (props: Iprops) => {
           }}
         />
       ) : (
-        <Image alt="img-student" src="/images/background/backgroundform.png" />
+        <Image alt="img-student" src="/images/background/education.png" />
       )}
     </Container>
   );

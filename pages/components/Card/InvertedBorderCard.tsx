@@ -16,12 +16,12 @@ interface iInvertedBorderCard {
   width: number | string;
   height: number | string;
 }
-enum IconKey {
-  BACK = 'back',
-  SCHEDULE = 'schedule',
-  PROFILE = 'profile',
-  TRANSCRIPT = 'transcript',
-}
+const IconKey = {
+  BACK: 'back',
+  SCHEDULE: 'schedule',
+  PROFILE: 'profile',
+  TRANSCRIPT: 'transcript',
+};
 
 const InvertedBorderCard = (props: iInvertedBorderCard) => {
   const { hasIcon, imageString, height, width } = props;
@@ -63,7 +63,7 @@ const InvertedBorderCard = (props: iInvertedBorderCard) => {
     },
     {
       key: IconKey.SCHEDULE,
-      position: 131,
+      position: 132,
       content: (
         <ScheduleOutlined
           style={{

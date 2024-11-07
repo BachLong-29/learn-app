@@ -14,7 +14,7 @@ const InvertedCard = (props: iInvertedCard) => {
   const { hasIcon, width = 300, height = 400, children } = props;
 
   return (
-    <Card w={width} h={height}>
+    <Card w={width} h={height} minHeight="18vh">
       <CardBox>
         {children}
         <Icon>
@@ -37,7 +37,7 @@ const Card = styled(Box)`
   overflow: hidden;
   margin: 15px;
   margin-top: 0;
-  padding: 20px;
+  padding: 10px;
 `;
 
 const CardBox = styled(Box)`
@@ -45,7 +45,9 @@ const CardBox = styled(Box)`
   inset: 10px;
   background: ${defaultTheme.colors.pink};
   border-radius: 25px;
-  padding: 20px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
 `;
 const Icon = styled(Box)`
   position: absolute;

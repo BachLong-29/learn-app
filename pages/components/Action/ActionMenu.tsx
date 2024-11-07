@@ -47,7 +47,7 @@ const ActionMenu = ({
     },
     [onItemSelect]
   );
-  console.log({ data });
+
   const menu = useMemo(
     () => (
       <Menu onClick={handleItemSelect}>

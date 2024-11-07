@@ -16,7 +16,9 @@ import TextAreaField from 'components/Field/TextAreaField';
 import UploadField from 'components/Field/UploadField';
 import dayjs from 'dayjs';
 import defaultTheme from 'ui-components/theme/theme';
+import { display } from '@xstyled/system';
 import styled from 'styled-components';
+import useBreakpoint from 'ui-components/Grid';
 
 const Grid = styled.div`
   padding: 20px;
@@ -64,6 +66,7 @@ const otherFields = [
 ];
 const StudentFormContent = (props: any) => {
   const { renderAction } = props;
+  const screens = useBreakpoint();
   const form = useFormikContext<{ images: any; year?: any }>();
   const banner = useMemo(() => {
     return (
@@ -74,6 +77,7 @@ const StudentFormContent = (props: any) => {
           background: defaultTheme.colors.dark_blue,
           borderBottomLeftRadius: '24px',
           borderTopLeftRadius: '24px',
+          display: screens.lg ? 'block' : 'none',
         }}
         image={
           form?.values?.images?.[0]?.originImg &&
@@ -81,7 +85,7 @@ const StudentFormContent = (props: any) => {
         }
       />
     );
-  }, [JSON.stringify(form?.values)]);
+  }, [JSON.stringify(form?.values), screens]);
 
   useEffect(() => {
     if (

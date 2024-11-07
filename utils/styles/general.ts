@@ -23,4 +23,7 @@ export const FormFooter = styled(Flex)`
   height: 100px;
   gap: 40px;
   border-bottom-right-radius: 30px;
+  @media only screen and (max-width: 990px) {
+    border-bottom-left-radius: 30px;
+  }
 `;
